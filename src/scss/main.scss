@@ -1,0 +1,1692 @@
+:root {
+    --exclamation: url("");
+}
+
+@font-face {
+    font-family: 'Clarika Geo Thin';
+    src: url("../fonts/The Refinery Clarika Geo Thin.ttf");
+}
+
+
+@font-face {
+    font-family: 'Clarika Geo Regular';
+    src: url("../fonts/The Refinery Clarika Geo Regular.ttf");
+}
+
+@font-face {
+    font-family: 'Clarika Geo Medium';
+    src: url("../fonts/The Refinery Clarika Geo Medium.ttf");
+}
+
+@font-face {
+    font-family: 'Clarika Geo Bold';
+    src: url("../fonts/The Refinery Clarika Geo Bold.ttf");
+}
+
+$border-1: #FFDD00;
+$border-2: #DEDEDE;
+$border-3: #E9EBED;
+$border-4: #585858;
+$border-5: #58585833;
+
+$background-1: #FFDD00;
+$background-2: #48B059;
+$background-3: #222222;
+$background-4: #F6F7F7;
+$background-5: #E9EBED;
+$background-6: #585858;
+
+$text-1: #222222;
+$text-2: #FF5050;
+$text-3: #585858;
+
+// *************************
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    line-height: 1.5;
+    vertical-align: baseline;
+    text-decoration: none;
+    outline: 0;
+    box-sizing: border-box;
+    background-color: transparent;
+    font-family: "Clarika Geo Regular", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.container {
+    width: 1040px;
+    margin: 0 auto;
+    min-height: fit-content;
+    height: 100vh; // zmień na 100% po umieszczeniu w Wordpress
+    position: relative;
+    overflow: hidden;
+    // border: 1px dotted red
+}
+
+.form-pages {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    position: absolute;
+    transition: left 0.5s ease-out;
+    top: 0;
+    left: 0;
+
+    .form-page {
+        width: 100%;
+        height: 100%;
+        padding-top: calc(20px + 5vh);
+        padding-bottom: calc(100px + 5vh);
+        display: flex;
+        flex-shrink: 0;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        // border: green 1px dotted;
+
+        .error-message-box {
+            display: flex;
+            justify-content: center;
+            // min-height: 40px;
+            align-items: center;
+            // border: blue 1px dotted;
+            margin: 30px 20px;
+            min-height: 50px;
+
+            .error-message {
+                position: relative;
+                padding-left: 60px;
+                line-height: 1.5;
+                display: flex;
+                align-items: center;
+                color: $text-2;
+                font-size: 18px;
+                justify-content: center;
+                width: fit-content;
+                // border: red 1px dotted;
+
+                &::before {
+                    content: var(--exclamation);
+                    height: 30px;
+                    width: 30px;
+                    position: absolute;
+                    display: flex;
+                    left: 0;
+                    top: 0;
+                    // border: green 1px dotted;
+                    align-items: center;
+                    height: 100%;
+                    padding-left: 10px;
+                }
+            }
+        }
+    }
+}
+
+h1 {
+    font-family: "Clarika Geo Medium", sans-serif;
+    font-size: 24px;
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+h2 {
+    font-family: "Clarika Geo Medium", sans-serif;
+    font-size: 24px;
+    margin-bottom: 35px;
+    text-align: center;
+}
+
+sup {
+    vertical-align: super;
+    font-size: smaller;
+}
+
+.tiles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+
+    .tile {
+        width: 300px;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+        font-family: "Clarika Geo Bold", sans-serif;
+        font-size: 26px;
+        background-color: #E9EBED;
+        cursor: pointer;
+        position: relative;
+        transition: all 0.05s;
+        outline: 0px solid $border-4;
+
+        &::before {
+            content: "";
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: $background-6;
+            z-index: -1;
+            transition: all 0.1s;
+
+        }
+
+        &::after {
+            content: "";
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background-color: $background-6;
+            z-index: -1;
+            transition: all 0.1s;
+        }
+
+        &:hover::before {
+            top: -8px;
+            left: -8px;
+        }
+
+        &:hover::after {
+            bottom: -8px;
+            right: -8px;
+        }
+
+        &.active {
+            outline: 8px solid $border-4;
+        }
+    }
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 60px;
+}
+
+.fixed-buttons {
+    display: none;
+    justify-content: space-between;
+    margin-top: 60px;
+    position: fixed;
+    bottom: 50px;
+    width: 1040px;
+    z-index: 99;
+
+    .button {
+        padding: 10px 50px;
+        display: flex;
+        width: fit-content;
+        border-radius: 100px;
+        text-transform: uppercase;
+        font-family: "Clarika Geo Bold", sans-serif;
+        align-items: center;
+        font-size: 18px;
+        margin: 0 100px;
+        cursor: pointer;
+        transition: all 0.1s;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, .3), -2px -2px 4px rgba(0, 0, 0, .2);
+        background-color: #fff;
+        user-select: none;
+        width: 180px;
+        justify-content: center;
+    }
+}
+
+.button {
+    padding: 10px 50px;
+    display: flex;
+    width: fit-content;
+    border-radius: 100px;
+    text-transform: uppercase;
+    font-family: "Clarika Geo Bold", sans-serif;
+    align-items: center;
+    font-size: 18px;
+    margin: 0 100px;
+    cursor: pointer;
+    transition: all 0.1s;
+
+    &.disable {
+        visibility: hidden;
+    }
+
+    &.prev {
+        border: $border-3 solid 6px;
+
+        &:hover {
+            background-color: $background-5;
+            border: $border-4 solid 6px;
+        }
+    }
+
+    &.next {
+        border: $border-1 solid 6px;
+
+        &:hover {
+            background-color: $background-1;
+            border: $border-4 solid 6px;
+        }
+    }
+
+    &.add {
+        margin: 0 20px;
+        padding: 10px;
+        align-self: flex-end;
+        display: flex;
+        font-family: "Clarika Geo Regular", sans-serif;
+        color: $background-2;
+
+
+        img {
+            height: 16px;
+            margin-right: 6px;
+            margin-top: 2px;
+        }
+    }
+
+    &.remove {
+        margin: 0 20px;
+        padding: 10px;
+        align-self: flex-end;
+        display: flex;
+        font-family: "Clarika Geo Regular", sans-serif;
+        color: $text-2;
+
+
+        img {
+            height: 16px;
+            margin-right: 6px;
+            margin-top: 2px;
+        }
+
+    }
+}
+
+span.obligatory {
+    color: $text-2;
+    font-weight: bold;
+}
+
+.content {
+    padding: 20px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    .list {
+        font-size: 24px;
+
+        ul {
+            li {
+                padding: 6px 0;
+            }
+        }
+    }
+
+    .annotations {
+        font-size: 18px;
+        margin-top: 80px;
+    }
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+
+    .checkbox {
+        display: block;
+        position: relative;
+        height: 35px;
+        width: 35px;
+        cursor: pointer;
+        user-select: none;
+        flex-shrink: 0;
+
+        /* Hide the browser's default checkbox */
+        input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 100%;
+            width: 100%;
+        }
+
+        /* Create a custom checkbox */
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: #fff;
+            border-radius: 8px;
+            border: 1px solid $border-5;
+
+            &.error {
+                border: 1px solid $text-2;
+                background-color: #ff505012;
+                // position: relative;
+
+                &::before {
+                    content: "!";
+                    top: 43%;
+                    left: -13px;
+                    position: absolute;
+                    transform: translateY(-50%);
+                    font-size: 30px;
+                    color: $text-2;
+                    font-weight: bold;
+                }
+            }
+        }
+
+        /* On mouse-over, add a background color */
+        &:hover input~.checkmark {
+            // background-color: $main-color-light;
+            // border: 1px $main-color solid;
+        }
+
+        /* When the checkbox is checked, add a background */
+        input:checked~.checkmark {
+            background-color: $background-1;
+            border: 1px $border-1 solid;
+        }
+
+        /* When the checkbox is checked, add a background */
+        input:checked:hover~.checkmark {
+            // background-color: red;
+            // border: 1px red solid;
+        }
+
+        /* Create the checkmark/indicator (hidden when not checked) */
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+        /* Show the checkmark when checked */
+        input:checked~.checkmark:after {
+            display: block;
+        }
+
+        /* Style the checkmark/indicator */
+        .checkmark:after {
+            left: 10px;
+            top: 4px;
+            width: 10px;
+            height: 19px;
+            border: solid $background-6;
+            border-width: 0 4px 4px 0;
+            transform: rotate(40deg);
+        }
+    }
+
+    .label-text {
+        display: inline-block;
+        font-size: 18px;
+        cursor: pointer;
+        margin: 0 15px;
+    }
+}
+
+.radio-container {
+    display: flex;
+    align-items: center;
+
+    .radio {
+        display: block;
+        position: relative;
+        height: 36px;
+        width: 36px;
+        cursor: pointer;
+        user-select: none;
+        flex-shrink: 0;
+
+        /* Hide the browser's default checkbox */
+        input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 100%;
+            width: 100%;
+        }
+
+        /* Create a custom checkbox */
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            // background-color: #999;
+            border-radius: 50%;
+            border: 1px solid $border-3;
+        }
+
+        /* On mouse-over, add a background color */
+        &:hover input~.checkmark {
+            // background-color: $main-color-light;
+            // border: 1px $main-color solid;
+        }
+
+        /* When the checkbox is checked, add a background */
+        input:checked~.checkmark {
+            // background-color: $background-4;
+            // border: 1px $main-color solid;
+        }
+
+        /* When the checkbox is checked, add a background */
+        input:checked:hover~.checkmark {
+            // background-color: red;
+            // border: 1px red solid;
+        }
+
+        /* Create the checkmark/indicator (hidden when not checked) */
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+        /* Show the checkmark when checked */
+        input:checked~.checkmark:after {
+            display: block;
+        }
+
+        /* Style the checkmark/indicator */
+        .checkmark:after {
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 75%;
+            height: 75%;
+            border-radius: 50%;
+            background-color: $background-1;
+        }
+    }
+
+    .label-text {
+        display: inline-block;
+        cursor: pointer;
+        margin: 0 12px;
+
+
+        span.help {
+            position: relative;
+
+            img {
+                height: 22px;
+                padding: 0 8px;
+                opacity: 0.5;
+                position: relative;
+                display: inline-block;
+            }
+
+            img:hover {
+                opacity: 1;
+                filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.1));
+            }
+        }
+    }
+}
+
+.toogle-switch {
+    position: relative;
+    display: inline-block;
+    width: 56px;
+    height: 24px;
+    flex-shrink: 0;
+
+    input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+
+        &:checked+.slider {
+            background-color: $background-1;
+            outline: 2px solid $background-1;
+        }
+
+        &:focus+.slider {
+            // box-shadow: 0 0 1px #2196F3;
+        }
+
+        &:checked+.slider:before {
+            transform: translateX(26px);
+            background-color: #fff;
+        }
+    }
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 2px;
+        right: 2px;
+        bottom: 0;
+        background-color: #fff;
+        outline: 2px solid $background-5;
+        transition: .4s;
+
+        &:before {
+            position: absolute;
+            content: "";
+            height: 20px;
+            width: 20px;
+            left: 3px;
+            bottom: 2px;
+            background-color: $background-5;
+            transition: .4s;
+        }
+
+        &.round {
+            border-radius: 34px;
+        }
+
+        &.round:before {
+            border-radius: 50%;
+        }
+    }
+}
+
+.file-upload-container {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 30px 0;
+    position: relative;
+
+    .file-upload,
+    .file-upload-multi {
+
+        border: 1px solid #ccc;
+        display: inline-block;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-family: 'Clarika Geo Regular';
+        font-size: 18px;
+        background-color: transparent;
+        border: 1px solid $background-5;
+        transition: all .1s ease-in-out;
+        min-width: 250px;
+        text-align: center;
+        width: 60%;
+
+        &:hover {
+            background-color: $background-1;
+            border: solid 1px transparent;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+    }
+
+    #uploadedFileName {
+        width: 60%;
+        // align-self: flex-end;
+        padding-right: 10px;
+        display: flex;
+        justify-content: right;
+        opacity: 0.5;
+        font-style: italic;
+    }
+
+    .error-box {
+        position: absolute;
+        left: 0;
+        bottom: -25px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 20px;
+        font-size: 12px;
+        color: $text-2;
+    }
+}
+
+.tooltip {
+    position: relative;
+    padding: 5px;
+    line-height: 0;
+    opacity: 0.5;
+
+    transition: all ease-in 0.05s;
+    // border: 1px dotted blue;
+    display: inline-block;
+
+    img {
+        height: 22px;
+        opacity: 0.5;
+        position: relative;
+        display: inline-block;
+    }
+
+    &:hover {
+        cursor: pointer;
+        opacity: 1;
+        filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.1));
+    }
+
+    &:hover .tooltip-text {
+        pointer-events: none;
+        opacity: 1;
+    }
+
+    .tooltip-text {
+        pointer-events: none;
+        display: inline-block;
+        position: absolute;
+        opacity: 0;
+        background-color: $background-1;
+        font-size: 12px;
+        max-width: 300px;
+        width: max-content;
+        padding: 20px;
+        border-radius: 2px;
+        text-align: center;
+        transition: all ease-in 0.05s;
+        bottom: 120%;
+        left: 50%;
+        transform: translateX(-50%);
+
+        .arrow {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(calc(-50%));
+            border-width: 8px;
+            border-style: solid;
+            border-color: $background-1 transparent transparent transparent;
+        }
+    }
+}
+
+.page3 {
+    .content {
+        display: flex;
+
+        .radios {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            font-size: 24px;
+        }
+
+        .notice {
+            background-color: $background-5;
+            padding: 35px 50px;
+            font-size: 20px;
+            margin: 60px 0;
+            border-left: 8px solid $border-1;
+            min-height: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .notice-header {
+                font-family: "Clarika Geo Bold", sans-serif;
+                margin-bottom: 12px;
+            }
+
+            .notice-content {
+                display: none;
+
+                &.active {
+                    display: flex;
+                }
+            }
+        }
+    }
+}
+
+.form-page {
+    overflow-y: auto;
+
+    .radios {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        font-size: 24px;
+        margin: 20px 0;
+    }
+
+    .form-box {
+        background-color: $background-5;
+        margin: 20px;
+        display: flex;
+        flex-direction: column;
+
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding: 30px;
+
+            .input-container {
+                display: flex;
+                flex-direction: column;
+                width: calc(50% - 15px);
+                // border: solid 1px red;
+
+                label {
+                    margin-bottom: 10px;
+                    margin-left: 5px;
+                    text-transform: uppercase;
+                    font-family: "Clarika Geo Bold";
+                    font-size: 16px;
+
+                    span {
+                        color: $text-2;
+                        font-family: "Clarika Geo Bold";
+                    }
+
+                    .help {
+                        position: relative;
+
+                        img {
+                            height: 18px;
+                            padding: 0 8px;
+                            opacity: 0.5;
+                            position: relative;
+                            display: inline-block;
+                        }
+
+                        img:hover {
+                            opacity: 1;
+                            filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.1));
+                        }
+                    }
+                }
+
+                .input-wrapper {
+                    // border: green solid 1px;
+                    position: relative;
+
+                    input {
+                        background-color: #fff;
+                        height: 50px;
+                        padding: 0 20px;
+                        display: flex;
+                        align-items: center;
+                        font-size: 20px;
+                        border: 1px solid $border-5;
+                        border-radius: 3px;
+                        width: 100%;
+
+                        &.error {
+                            border: 1px solid $text-2;
+                            background-color: #ff505012;
+                        }
+                    }
+
+                    &.error {
+
+                        &::after {
+                            content: url("../img/icons/exclamation.svg");
+                            position: absolute;
+                            right: 10px;
+                            top: 50%;
+                            display: flex;
+                            width: 20px;
+                            height: 20px;
+                            transform: translateY(-50%);
+                        }
+                    }
+
+                    &.date.error::after {
+                        right: 55px;
+                    }
+
+                    .error-box {
+                        position: absolute;
+                        left: 5px;
+                        bottom: -20px;
+                        display: flex;
+                        width: 100%;
+                        height: 20px;
+                        font-size: 12px;
+                        color: $text-2;
+                    }
+                }
+
+                .select-input-container {
+                    display: flex;
+
+                    select {
+                        background-color: #fff;
+                        height: 50px;
+                        padding: 0 20px;
+                        display: flex;
+                        align-items: center;
+                        font-size: 20px;
+                        border: 1px solid $border-5;
+                        border-radius: 3px;
+                        width: 50%;
+
+                        optgroup {
+                            font-size: 18px;
+                        }
+
+                        &.pesel {
+                            appearance: none;
+                        }
+
+                        &:disabled {
+                            background-color: #fff;
+                            color: #000;
+                            opacity: 1;
+                        }
+
+                        &.error {
+                            border: 1px solid $text-2;
+                            background-color: #ff505012;
+                        }
+                    }
+
+                    .input-wrapper {
+                        width: 50%;
+
+                        input {}
+                    }
+                }
+
+                &.pesel {
+                    position: relative;
+
+                    .pesel-button {
+                        position: absolute;
+                        right: 5px;
+                        top: 0;
+                        border: 1px solid $border-5;
+                        border-radius: 3px;
+                        display: flex;
+                        align-items: center;
+                        padding: 0px 5px 2px;
+                        cursor: pointer;
+                        transition: all .1s;
+                        color: $text-3;
+
+                        &:hover {
+                            background-color: $background-1;
+                        }
+
+                        &.active {
+                            background-color: $background-1;
+                            box-shadow: rgba(0, 0, 0, .5) 2px 2px 4px 0px inset, rgba(0, 0, 0, .1) -1px -1px 2px 0px inset;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.additional {
+            display: none;
+        }
+    }
+}
+
+.page5 {
+    .form-box {
+        visibility: hidden;
+    }
+}
+
+.page6 {
+    .form-box {
+        visibility: hidden;
+
+        form {
+            .input-container {
+                width: calc(33.33333% - 20px);
+            }
+        }
+    }
+
+    .notice {
+        visibility: hidden;
+        background-color: $background-5;
+        padding: 35px 50px;
+        font-size: 20px;
+        border-left: 8px solid $border-1;
+        min-height: 250px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .notice-header {
+            font-family: "Clarika Geo Bold", sans-serif;
+            margin-bottom: 12px;
+        }
+
+        .notice-content {
+            display: flex;
+
+            &.disable {
+                display: none;
+            }
+        }
+    }
+}
+
+.page7 {
+    .form-box {
+
+        form {
+            .input-container {
+                &.w-100 {
+                    width: calc(100%);
+                }
+
+                &.w-50 {
+                    width: calc(50% - 20px);
+                }
+
+                &.w-25 {
+                    width: calc(25% - 20px);
+                }
+            }
+        }
+    }
+}
+
+.page9 {
+    .summary-calculated-box {
+        border: 3px solid $border-1;
+        padding: 10px 20px;
+        border-radius: 20px;
+        // width: 100%;
+        margin: 30px 10px;
+
+        .calc-row {
+            font-family: "Clarika Geo Regular", sans-serif;
+            font-size: 24px;
+            margin-left: 20px;
+            display: flex;
+            position: relative;
+            margin: 10px 0;
+
+            &.sub {
+                padding-left: 30px;
+            }
+
+            .value {
+                position: absolute;
+                left: 450px;
+                display: flex;
+                gap: 10px;
+
+                .digit {
+                    font-family: "Clarika Geo Medium", sans-serif;
+                    background-color: rgba($background-1, 0.7);
+                    border-radius: 5px;
+                    display: inline-block;
+                    min-width: 100px;
+                    padding-right: 5px;
+                    text-align: right;
+                }
+
+                .input-wrapper {
+                    display: flex;
+
+                    input {
+                        font-family: "Clarika Geo Medium", sans-serif;
+                        // background-color: rgba($background-1, 0.7);
+                        border: 3px solid $background-1;
+                        border-radius: 5px;
+                        display: inline-block;
+                        width: 100px;
+                        height: 40px;
+                        padding-right: 2px;
+                        text-align: right;
+                        font-size: 24px;
+                        padding-bottom: 3px;
+
+                        &.error {
+                            border: 1px solid $text-2;
+                            background-color: #ff505012;
+                        }
+                    }
+                }
+
+                .unit {
+                    opacity: 0.7;
+                }
+
+                .error-box {
+                    position: absolute;
+                    left: 5px;
+                    bottom: -20px;
+                    display: flex;
+                    width: 150%;
+                    height: 20px;
+                    font-size: 12px;
+                    color: $text-2;
+                }
+            }
+
+            &.contracted-power-low {
+                display: none;
+            }
+
+            &.contracted-power-high {
+                display: none;
+            }
+
+        }
+    }
+
+    .equipment-box {
+        display: none;
+        border: 1px solid $border-3;
+        padding: 10px 20px;
+        border-radius: 20px;
+        margin: 30px 10px;
+
+        .equipment-row {
+            display: flex;
+            padding: 6px 0;
+            align-items: center;
+
+            .equipment-name {
+                font-family: "Clarika Geo Regular", sans-serif;
+                font-size: 24px;
+                margin-left: 20px;
+                margin-top: -4px;
+            }
+        }
+
+        .power-row {
+            font-family: "Clarika Geo Regular", sans-serif;
+            font-size: 22px;
+            color: $text-3;
+            margin-left: 80px;
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            display: none;
+            position: relative;
+
+            input {
+                height: 40px;
+                width: 75px;
+                border: solid 1px $border-5;
+                margin: 0 10px;
+                border-radius: 2px;
+                padding: 0 5px;
+                font-family: "Clarika Geo Medium", sans-serif;
+                font-size: 22px;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                padding-bottom: 4px;
+
+                &:focus {
+                    border: $border-1 2px solid;
+                }
+
+                &.error {
+                    border: 1px solid $text-2;
+                    background-color: #ff505012;
+                }
+            }
+
+            .error-box {
+                position: absolute;
+                left: 5px;
+                bottom: -20px;
+                display: flex;
+                width: 150%;
+                height: 20px;
+                font-size: 12px;
+                color: $text-2;
+            }
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        &.active {
+            display: block;
+        }
+    }
+}
+
+.page10 {
+    .form-box {
+
+        form {
+            .input-container {
+                &.w-100 {
+                    width: calc(100%);
+                }
+
+                &.w-50 {
+                    width: calc(50% - 20px);
+                }
+
+                &.w-25 {
+                    width: calc(25% - 20px);
+                }
+            }
+        }
+    }
+
+    .notice {
+        background-color: $background-5;
+        padding: 35px 50px;
+        font-size: 20px;
+        margin: 30px 0;
+        border-left: 8px solid $border-1;
+        min-height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .notice-header {
+            font-family: "Clarika Geo Bold", sans-serif;
+            margin-bottom: 12px;
+        }
+    }
+}
+
+.page11 {
+    .radios {
+        flex-direction: column;
+        gap: 20px;
+
+        p {
+            margin-top: 20px;
+        }
+    }
+}
+
+.page12 {
+    .reserve-seller {
+        font-size: 18px;
+        line-height: 1.8;
+
+        .input-select-container {
+            position: relative;
+            display: inline-block;
+            height: 30px;
+            font-size: 18px;
+
+            input {
+                border: 1px $background-5 solid;
+                height: 30px;
+                width: 100%;
+                padding: 3px 30px 3px 5px;
+                font-size: 18px;
+
+                &.error {
+                    border: 1px solid $text-2;
+                    background-color: #ff505012;
+                }
+            }
+
+            .chevron {
+                position: absolute;
+                right: 0;
+                top: 0;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                height: 100%;
+                padding: 8px;
+
+                img {
+                    height: 15px;
+                }
+            }
+
+            .custom-select {
+                position: absolute;
+                left: 0;
+                top: 30px;
+                border: $background-5 1px solid;
+                border-top-style: none;
+                background-color: #fff;
+                width: 100%;
+                display: none;
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, .1);
+
+                .custom-option {
+                    cursor: pointer;
+                    padding: 3px 5px;
+                }
+            }
+
+            &:nth-of-type(1) {
+                z-index: 99;
+                min-width: 320px;
+            }
+
+            &:nth-of-type(2) {
+                z-index: 98;
+                min-width: 320px;
+            }
+
+            &:nth-of-type(3) {
+                z-index: 97;
+                min-width: 320px;
+            }
+
+            &.error {
+
+                &::after {
+                    content: url("../img/icons/exclamation.svg");
+                    position: absolute;
+                    right: 30px;
+                    top: 50%;
+                    display: flex;
+                    width: 20px;
+                    height: 20px;
+                    transform: translateY(-50%);
+                }
+            }
+        }
+    }
+}
+
+.page13 {
+    .radios-container {
+        flex-direction: column;
+        gap: 20px;
+
+        p {
+            margin-bottom: 50px;
+            font-size: 18px;
+        }
+    }
+}
+
+.page14 {
+    h1 {
+        margin-bottom: 30px;
+    }
+
+    .radios-container {
+        flex-direction: column;
+        gap: 20px;
+
+        p {
+            margin: 20px 0;
+            font-size: 18px;
+        }
+    }
+}
+
+.page15 {
+    .ol-container {
+        padding: 0 20px;
+
+        ol {
+            font-size: 18px;
+
+            li {
+                margin: 20px;
+            }
+        }
+    }
+}
+
+.page16 {
+    .form-box {
+        form {
+            .input-container {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+
+                textarea {
+                    width: 100%;
+                    background-color: #fff;
+                    min-height: 150px;
+                    font-size: 20px;
+                    padding: 20px;
+                }
+            }
+        }
+    }
+
+    .file-upload-double-container {
+        display: flex;
+
+        .file-upload-container {
+            display: flex;
+        }
+    }
+}
+
+.page17 {
+    position: relative;
+
+    .thanks {
+        // display: flex;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        font-size: 60px;
+        text-align: center;
+        font-family: "Clarika Geo Medium";
+    }
+
+    .getPDFForm {
+        padding: 10px 50px;
+        // display: flex;
+        width: fit-content;
+        border-radius: 100px;
+        text-transform: uppercase;
+        font-family: "Clarika Geo Bold", sans-serif;
+        align-items: center;
+        font-size: 18px;
+        margin: 0 100px;
+        cursor: pointer;
+        transition: all 0.1s;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), -2px -2px 4px rgba(0, 0, 0, 0.2);
+        background-color: #fff;
+        user-select: none;
+        border: #FFDD00 solid 6px;
+        margin: 0 auto;
+        display: none;
+
+        &:hover {
+            background-color: #FFDD00;
+            border: #585858 solid 6px;
+        }
+    }
+
+    .loading-wrapper {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 99;
+    }
+}
+
+.form-page.form {
+    #hidden-summary-form {
+        display: flex;
+        flex-direction: column;
+        overflow: scroll;
+    }
+}
+
+@media (max-width: 1200px) {
+
+    .container,
+    .fixed-buttons {
+        width: 800px;
+    }
+
+    .m1-w-100 {
+        width: 100% !important;
+    }
+
+    .m1-w-50 {
+        width: calc(50% - 15px) !important;
+    }
+
+}
+
+@media (max-width: 900px) {
+
+    .container {
+        width: 600px;
+        margin-bottom: 60px;
+        height: calc(100vh - 60px);
+    }
+
+    .fixed-buttons {
+        width: 600px;
+        bottom: 25px;
+
+        .button {
+            margin: 0 20px;
+        }
+    }
+
+    .content {
+        padding: 20px 0;
+
+        .list {
+            padding: 20px 50px;
+        }
+    }
+
+    .form-pages {
+        .form-page {
+
+            padding-top: 20px;
+            padding-bottom: 100px;
+
+            .form-box {
+                margin: 20px 0;
+            }
+
+            &.page5,
+            &.page6,
+            &.page8,
+            &.page10 {
+                .radios {
+                    flex-direction: column;
+                    gap: 50px;
+                }
+            }
+
+            &.page9 {
+                .summary-calculated-box {
+                    .calc-row {
+                        flex-direction: column;
+
+                        .value {
+                            position: static;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    h1 {
+        margin-bottom: 15px;
+    }
+
+    .tiles {
+        margin: 10px;
+        gap: 20px;
+    }
+
+    .m2-w-100 {
+        width: 100% !important;
+    }
+
+    .m2-w-50 {
+        width: calc(50% - 15px) !important;
+    }
+
+
+}
+
+@media (max-width: 480px) {
+
+    .container {
+        width: 100%;
+        margin-bottom: 60px;
+        height: calc(100vh - 60px);
+    }
+
+    .fixed-buttons {
+        width: 100%;
+        bottom: 25px;
+        padding: 0 10px;
+
+        .button {
+            margin: 0;
+        }
+    }
+
+    .tiles {
+        flex-direction: column;
+
+        .tile {
+            font-size: 22px;
+        }
+    }
+
+    h1,
+    h2 {
+        padding: 0 20px;
+    }
+
+    .content {
+        padding: 0px;
+
+        .list {
+            font-size: 20px;
+        }
+
+        .annotations {
+            margin-top: 0px;
+            padding: 0 10px;
+        }
+
+    }
+
+    .radios {
+        font-size: 22px !important;
+    }
+
+    .calc-row {
+        font-size: 20px !important;
+    }
+
+    .equipment-box {
+        .buttons {
+            flex-direction: column;
+        }
+    }
+
+
+    .fixed-buttons {
+        .button {
+            width: 140px;
+            padding: 10px;
+        }
+    }
+
+    .page3 {
+        .content {
+            .notice {
+                margin: 35px 0;
+                font-size: 18px;
+            }
+        }
+    }
+
+    .page6,
+    .page10 {
+        .notice {
+            min-height: auto;
+            font-size: 18px;
+        }
+    }
+
+    .page9 {
+        .equipment-box {
+            .equipment-row {
+                .equipment-name {
+                    font-size: 20px;
+                }
+            }
+
+            .power-row {
+                font-size: 18px;
+            }
+        }
+    }
+
+    .page11 {
+        .radios {
+            p {
+                font-size: 20px;
+            }
+        }
+    }
+
+    .page12 {
+        .reserve-seller {
+            padding: 20px;
+        }
+
+    }
+
+    .page13 {
+        .radios-container {
+
+            p {
+                padding: 20px;
+            }
+        }
+    }
+
+    .page14 {
+        .radios-container {
+            padding: 0 20px;
+        }
+    }
+
+    .form-page {
+        .form-box {
+            form {
+                .input-container {
+                    .select-input-container {
+                        flex-wrap: wrap;
+
+                        select {
+                            width: 100%;
+                        }
+
+                        .input-wrapper {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+
+        .form-page {
+            padding: 20px 20px 100px 20px !important;
+        }
+
+        .radios {
+            padding: 10px;
+        }
+    }
+
+    .m3-w-100 {
+        width: 100% !important;
+    }
+}

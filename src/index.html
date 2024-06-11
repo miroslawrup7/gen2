@@ -1,0 +1,1627 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main.css?cache_bust=123">
+    <link rel="shortcut icon" href="#">
+
+    <title>Formularz</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="form-pages">
+
+            <div class="form-page page1">
+
+                <h1>Wniosek online o zawarcie nowej umowy kompleksowej dla konsumenta</h1>
+
+                <div class="tiles">
+                    <div class="tile radio1">Nie mam licznika gazowego, został zdemontowany</div>
+                    <div class="tile radio2">Mam nową instalację gazową, ale nie mam jeszcze licznika gazowego</div>
+                </div>
+
+                <div class="error-message-box">
+                    <div class="error-message"></div>
+                </div>
+
+                <div class="fixed-buttons">
+                    <div class="button prev disable">wstecz</div>
+                    <div class="button next">dalej</div>
+                </div>
+
+            </div>
+
+            <div class="form-page page2">
+
+                <h1>Do wypełnienia wniosku potrzebujesz:</h1>
+
+                <div class="content">
+                    <div class="list">
+                        <ul>
+                            <li></li>
+                            <li>nr PESEL (lub rodzaj serię i nr dokumentu – dotyczy obcokrajowców nieposiadających nr
+                                PESEL)</li>
+                            <li><a href="https://www.gen.com.pl/dla-domu/dokumenty-do-pobrania"
+                                    target="_blank">kompletnie uzupełniony wniosek</a> o rozpoczęcie dostarczania paliwa
+                                gazowego, jeżeli nie
+                                został jeszcze dostarczony od Operatora sieci gazowej
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="annotations">Możesz zapoznać się ze wzorcem naszej umowy kompleksowej dostarczania
+                        paliwa gazowego w zakładce <a
+                            href="https://www.gen.com.pl/dla-domu/dokumenty-do-pobrania#wzory-umow"
+                            target="_blank">WZORY UMÓW</a>.
+                    </div>
+                </div>
+
+                <div class="bottom-ghost"></div>
+
+                <div class="fixed-buttons">
+                    <div class="button prev">
+                        wstecz
+                    </div>
+                    <div class="button next">
+                        dalej
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="form-page page3">
+
+                <h1>1. Jak chcesz podpisać umowę?</h1>
+
+                <div class="content">
+                    <div class="radios">
+                        <div class="radio-container">
+                            <label class="radio">
+                                <input type="radio" id="radio3" name="radiosA" value="radio3" autocomplete="off"
+                                    checked>
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="label-text" for="radio3">Online</label>
+                        </div>
+
+                        <div class="radio-container">
+                            <label class="radio">
+                                <input type="radio" id="radio4" name="radiosA" value="radio4" autocomplete="off">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="label-text" for="radio4">Kurier DHL</label>
+                        </div>
+                    </div>
+                    <div class="notice">
+                        <p class="notice-header">UWAGA!</p>
+                        <p class="notice-content radio3 active">
+                            Wysyłamy na Twój adres e-mail umowę, którą w dowolnym momencie podpisujesz elektronicznie za
+                            pomocą kodu SMS. Tryb on-line wymaga posiadania adresu mailowego i telefonu komórkowego dla
+                            każdej z podpisujących osób.
+                        </p>
+                        <p class="notice-content radio4">
+                            Podczas wizyty kuriera wymagana jest obecność wszystkich Wnioskujących. O momencie nadania
+                            przesyłki zostaniesz powiadomiony za pośrednictwem wiadomości sms. Umowę podpisujesz podczas
+                            wizyty Kuriera. Jeden podpisany egzemplarz zostawiasz kurierowi w bezpiecznej kopercie. Ta
+                            usługa jest dla ciebie bezpłatna i wymaga podania numeru telefonu dla kuriera.
+                        </p>
+
+                    </div>
+                </div>
+
+                <div class="bottom-ghost"></div>
+
+                <div class="fixed-buttons">
+                    <div class="button prev">
+                        wstecz
+                    </div>
+                    <div class="button next">
+                        dalej
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="form-page page4">
+
+                <h1>2. Twoje dane (dalej Wnioskujący)</h1>
+
+                <div class="form-box">
+                    <form action="">
+                        <div class="input-container m2-w-100">
+                            <label>Imię<span> *</span></label>
+                            <div class="input-wrapper">
+                                <input type="text" id="fname4_1" data-var="inputText4_1" placeholder="Wpisz">
+                                <div class="error-box"></div>
+                            </div>
+
+                        </div>
+                        <div class="input-container m2-w-100">
+                            <label>Nazwisko<span> *</span></label>
+                            <div class="input-wrapper">
+                                <input type="text" id="sname4_2" data-var="inputText4_2" placeholder="Wpisz">
+                                <div class="error-box"></div>
+                            </div>
+                        </div>
+                        <div class="input-container pesel m2-w-100">
+
+                            <label>DOKUMENT TOŻSAMOŚCI<span> *</span></label>
+
+                            <div class="select-input-container">
+                                <select disabled id="IDType4_1" data-var="select4_1" class="pesel">
+                                    <optgroup>
+                                        <option selected="selected">PESEL</option>
+                                        <option>Dowód osobisty</option>
+                                        <option>Paszport</option>
+                                        <option>Karta stałego pobytu</option>
+                                    </optgroup>
+                                </select>
+
+                                <div class="input-wrapper">
+                                    <input name="pesel" type="text" id="ID4_3" data-var="inputText4_3"
+                                        placeholder="Wpisz">
+                                    <div class="error-box"></div>
+                                </div>
+                            </div>
+
+                            <div class="pesel-button">Nie mam PESEL</div>
+
+                        </div>
+                        <div class="input-container m2-w-100">
+                            <label>Adres zamieszkania<span> *</span></label>
+                            <div class="input-wrapper">
+                                <input type="text" id="address4_4" data-var="inputText4_4"
+                                    placeholder="Wpisz ulicę, nr domu lub lokalu">
+                                <div class="error-box"></div>
+                            </div>
+                        </div>
+                        <div class="input-container m2-w-100">
+                            <label>Kod pocztowy<span> *</span></label>
+                            <div class="input-wrapper">
+                                <input name="postcode" type="text" id="postcode4_5" data-var="inputText4_5"
+                                    placeholder="Wpisz">
+                                <div class="error-box"></div>
+                            </div>
+                        </div>
+                        <div class="input-container m2-w-100">
+                            <label>Miejscowość<span> *</span></label>
+                            <div class="input-wrapper">
+                                <input type="text" id="locality4_6" data-var="inputText4_6" placeholder="Wpisz">
+                                <div class="error-box"></div>
+                            </div>
+                        </div>
+                        <div class="input-container m2-w-100">
+                            <label>E-mail<span> *</span></label>
+                            <div class="input-wrapper">
+                                <input name="email" type="text" id="email4_7" data-var="inputText4_7"
+                                    placeholder="Wpisz">
+                                <div class="error-box"></div>
+                            </div>
+                        </div>
+                        <div class="input-container m2-w-100">
+                            <label>Telefon<span> *</span></label>
+                            <div class="input-wrapper">
+                                <input name="phone" type="text" id="phone4_8" data-var="inputText4_8"
+                                    placeholder="Wpisz">
+                                <div class="error-box"></div>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="button add"><img src="./img/icons/plus.svg" alt="plus">Dodaj wnioskodawcę
+                    </div>
+                </div>
+
+                <div class="form-box additional">
+                    <form action="">
+                        <div class="input-container m2-w-100">
+                            <label>Imię<span> *</span></label>
+                            <div class="input-wrapper">
+                                <input type="text" id="fname4_9" data-var="inputText4_9" placeholder="Wpisz">
+                                <div class="error-box"></div>
+                            </div>
+
+                        </div>
+                        <div class="input-container m2-w-100">
+                            <label>Nazwisko<span> *</span></label>
+                            <div class="input-wrapper">
+                                <input type="text" id="sname4_10" data-var="inputText4_10" placeholder="Wpisz">
+                                <div class="error-box"></div>
+                            </div>
+                        </div>
+                        <div class="input-container pesel m2-w-100">
+
+                            <label>DOKUMENT TOŻSAMOŚCI<span> *</span></label>
+
+                            <div class="select-input-container">
+                                <select disabled id="IDType4_2" data-var="select4_2" class="pesel">
+                                    <optgroup>
+                                        <option selected="selected">PESEL</option>
+                                        <option>Dowód osobisty</option>
+                                        <option>Paszport</option>
+                                        <option>Karta stałego pobytu</option>
+                                    </optgroup>
+                                </select>
+
+                                <div class="input-wrapper">
+                                    <input name="pesel" type="text" id="ID4_11" data-var="inputText4_11"
+                                        placeholder="Wpisz">
+                                    <div class="error-box"></div>
+                                </div>
+                            </div>
+
+                            <div class="pesel-button">Nie mam PESEL</div>
+
+                        </div>
+                        <div class="input-container m2-w-100">
+                            <label>Adres zamieszkania<span> *</span></label>
+                            <div class="input-wrapper">
+                                <input type="text" id="address4_12" data-var="inputText4_12"
+                                    placeholder="Wpisz ulicę, nr domu lub lokalu">
+                                <div class="error-box"></div>
+                            </div>
+                        </div>
+                        <div class="input-container m2-w-100">
+                            <label>Kod pocztowy<span> *</span></label>
+                            <div class="input-wrapper">
+                                <input name="postcode" type="text" id="postcode4_13" data-var="inputText4_13"
+                                    placeholder="Wpisz">
+                                <div class="error-box"></div>
+                            </div>
+                        </div>
+                        <div class="input-container m2-w-100">
+                            <label>Miejscowość<span> *</span></label>
+                            <div class="input-wrapper">
+                                <input type="text" id="locality4_14" data-var="inputText4_14" placeholder="Wpisz">
+                                <div class="error-box"></div>
+                            </div>
+                        </div>
+                        <div class="input-container m2-w-100">
+                            <label>E-mail<span> *</span></label>
+                            <div class="input-wrapper">
+                                <input name="email" type="text" id="email4_15" data-var="inputText4_15"
+                                    placeholder="Wpisz">
+                                <div class="error-box"></div>
+                            </div>
+                        </div>
+                        <div class="input-container m2-w-100">
+                            <label>Telefon<span> *</span></label>
+                            <div class="input-wrapper">
+                                <input name="phone" type="text" id="phone4_16" data-var="inputText4_16"
+                                    placeholder="Wpisz">
+                                <div class="error-box"></div>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="button remove"><img src="./img/icons/minus.svg" alt="minus">Usuń wnioskodawcę
+                    </div>
+                </div>
+
+                <div class="bottom-ghost"></div>
+
+                <div class="fixed-buttons">
+                    <div class="button prev">
+                        wstecz
+                    </div>
+                    <div class="button next">
+                        dalej
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="form-page page5">
+
+                <h1>3. Adres korespondencyjny</h1>
+                <div class="radios">
+                    <div class="radio-container">
+                        <label class="radio">
+                            <input type="radio" id="radio5" name="radiosB" value="radio5" autocomplete="off" checked>
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="label-text" for="radio5">Taki sam, jak adres zamieszkania</label>
+                    </div>
+
+                    <div class="radio-container">
+                        <label class="radio">
+                            <input type="radio" id="radio6" name="radiosB" value="radio6" autocomplete="off">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="label-text" for="radio6">Inny, niż adres zamieszkania</label>
+                    </div>
+                </div>
+
+                <div class="form-box">
+                    <form action="">
+                        <div class="input-container m2-w-100">
+                            <label>Imię i nazwisko lub pełna nazwa<span> *</span></label>
+                            <div class="input-wrapper">
+                                <input type="text" id="name5_1" data-var="inputText5_1" placeholder="Wpisz">
+                                <div class="error-box"></div>
+                            </div>
+                        </div>
+                        <div class="input-container m2-w-100">
+                            <label>Adres korespondecyjny<span> *</span></label>
+                            <div class="input-wrapper">
+                                <input type="text" id="address5_2" data-var="inputText5_2"
+                                    placeholder="Wpisz ulicę, nr domu lub lokalu">
+                                <div class="error-box"></div>
+                            </div>
+                        </div>
+                        <div class="input-container m2-w-100">
+                            <label>Kod pocztowy<span> *</span></label>
+                            <div class="input-wrapper">
+                                <input name="postcode" type="text" id="postcode5_3" data-var="inputText5_3"
+                                    placeholder="Wpisz">
+                                <div class="error-box"></div>
+                            </div>
+                        </div>
+                        <div class="input-container m2-w-100">
+                            <label>Miejscowość<span> *</span></label>
+                            <div class="input-wrapper">
+                                <input type="text" id="locality5_4" data-var="inputText5_4" placeholder="Wpisz">
+                                <div class="error-box"></div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="bottom-ghost"></div>
+
+                <div class="fixed-buttons">
+                    <div class="button prev">
+                        wstecz
+                    </div>
+                    <div class="button next">
+                        dalej
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="form-page page6">
+
+                <h1>4. Jak podpiszesz umowę?</h1>
+                <div class="radios">
+                    <div class="radio-container">
+                        <label class="radio">
+                            <input type="radio" id="radio7" name="radiosC" value="radio7" autocomplete="off" checked>
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="label-text" for="radio7">Osobiście</label>
+                    </div>
+
+                    <div class="radio-container">
+                        <label class="radio">
+                            <input type="radio" id="radio8" name="radiosC" value="radio8" autocomplete="off">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="label-text" for="radio8">Za pośrednictwem pełnomocnika</label>
+                    </div>
+                </div>
+
+                <div class="form-box">
+                    <form action="">
+                        <div class="input-container m2-w-100">
+                            <label>Imię i nazwisko<span> *</span></label>
+                            <div class="input-wrapper">
+                                <input type="text" id="name6_1" data-var="inputText6_1" placeholder="Wpisz">
+                                <div class="error-box"></div>
+                            </div>
+                        </div>
+                        <div class="input-container m2-w-50 m3-w-100">
+                            <label>PESEL<span> *</span></label>
+                            <div class="input-wrapper">
+                                <input name="pesel" type="text" id="pesel6_2" data-var="inputText6_2"
+                                    placeholder="Wpisz">
+                                <div class="error-box"></div>
+                            </div>
+                        </div>
+                        <div class="input-container m2-w-50 m3-w-100">
+                            <label>Data pełnomocnictwa<span> *</span></label>
+                            <div class="input-wrapper date">
+                                <input type="date" id="date6_3" data-var="date6_1" placeholder="Wpisz">
+                                <div class="error-box"></div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="notice">
+                    <p class="notice-header">UWAGA!</p>
+                    <p class="notice-content online">
+                        W przypadku podpisywania umowy przez pełnomocnika, niezbędne jest przesłanie oryginału
+                        pełnomocnictwa lub kopii potwierdzonej za zgodność. Wniosek będzie realizowany po otrzymaniu
+                        przez G.EN. wspomnianego dokumentu.
+                    </p>
+                </div>
+
+                <div class="bottom-ghost"></div>
+
+                <div class="fixed-buttons">
+                    <div class="button prev">
+                        wstecz
+                    </div>
+                    <div class="button next">
+                        dalej
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="form-page page7">
+
+                <h1>5. Dane miejsca odbioru paliwa</h1>
+
+                <div class="form-box">
+                    <form action="">
+                        <div class="input-container w-100">
+                            <label>Nr warunków technicznych przyłączenia do sieci gazowej
+                                <span> *</span>
+                            </label>
+
+                            <div class="input-wrapper">
+                                <input type="text" id="condition7_1" data-var="inputText7_1" placeholder="Wpisz">
+                                <div class="error-box"></div>
+                            </div>
+                        </div>
+                        <div class="input-container w-100 PPG">
+                            <label>Nr PPG<span> *</span></label>
+                            <div class="input-wrapper">
+                                <input type="text" id="ppg7_2" data-var="inputText7_2" placeholder="Wpisz">
+                                <div class="error-box"></div>
+                            </div>
+                        </div>
+                        <div class="input-container m3-w-100">
+                            <label>Miejscowość<span> *</span></label>
+                            <div class="input-wrapper">
+                                <input type="text" id="locality7_3" data-var="inputText7_3" placeholder="Wpisz">
+                                <div class="error-box"></div>
+                            </div>
+                        </div>
+                        <div class="input-container m3-w-100">
+                            <label>Kod pocztowy<span> *</span></label>
+                            <div class="input-wrapper">
+                                <input name="postcode" type="text" id="postcode7_4" data-var="inputText7_4"
+                                    placeholder="Wpisz">
+                                <div class="error-box"></div>
+                            </div>
+                        </div>
+                        <div class="input-container w-50 m1-w-100">
+                            <label>Ulica<span> *</span></label>
+                            <div class="input-wrapper">
+                                <input type="text" id="street7_5" data-var="inputText7_5" placeholder="Wpisz">
+                                <div class="error-box"></div>
+                            </div>
+                        </div>
+                        <div class="input-container w-25 m1-w-50 m3-w-100">
+                            <label>Nr budynku / lokalu<span> *</span></label>
+                            <div class=" input-wrapper">
+                                <input type="text" id="houseno7_6" data-var="inputText7_6" placeholder="Wpisz">
+                                <div class="error-box"></div>
+                            </div>
+                        </div>
+                        <div class="input-container w-25 m1-w-50 m3-w-100">
+                            <label>Nr działki</label>
+                            <div class="input-wrapper">
+                                <input type="text" id="parcelno7_7" data-var="inputText7_7" placeholder="Wpisz">
+                                <div class="error-box"></div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="bottom-ghost"></div>
+
+                <div class="fixed-buttons">
+                    <div class="button prev">
+                        wstecz
+                    </div>
+                    <div class="button next">
+                        dalej
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="form-page page8">
+
+                <h1>6. Lokal, do którego chcesz podłączyć licznik</h1>
+
+                <div class="form-box">
+                    <form action="">
+                        <div class="input-container m1-w-100">
+                            <label>Jaką powierzchnię będziesz ogrzewał?<span> *</span></label>
+                            <div class="input-wrapper">
+                                <input name="digit" class="input-text8-1" type="text" id="area8_1"
+                                    data-var="inputText8_1" placeholder="Wpisz powierzchnię w metrach kwadratowych">
+                                <div class="error-box"></div>
+                            </div>
+                        </div>
+                        <div class="input-container m1-w-100">
+                            <label>Ile osób będzie mieszkać w domu?<span> *</span></label>
+                            <div class="input-wrapper">
+                                <input name="digit" class="input-text8-2" type="text" id="people8_2"
+                                    data-var="inputText8_2" placeholder="Wpisz liczbę">
+                                <div class="error-box"></div>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+
+                <div class="radios-and-header-container">
+                    <h2>Jaką moc urządzeń planujesz podłączyć?</h2>
+
+                    <div class="radios">
+
+                        <div class="radio-container">
+                            <label class="radio">
+                                <input type="radio" id="radio11" name="radiosE" value="radio11" autocomplete="off"
+                                    checked>
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="label-text" for="radio11">
+                                Wiem, jaka jest moc urządzeń, które chcę podłączyć
+                                <span class="tooltip">
+                                    <img src="./img/icons/question.png" alt="baloon">
+                                    <span class="tooltip-text bottom">Podanie rzeczywistej wartości mocy podłączonych
+                                        urządzeń pozwoli na dokładniejsze wyliczenie Twojego rocznego zużycia i
+                                        dopasowanie zaliczek miesięcznych. Rzeczywistą moc urządzeń pomoże określić Ci
+                                        projektant instalacji wewnętrznej.
+                                        <span class="arrow"></span>
+                                    </span>
+                                </span>
+                            </label>
+                        </div>
+
+                        <div class="radio-container">
+                            <label class="radio">
+                                <input type="radio" id="radio12" name="radiosE" value="radio12" autocomplete="off">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="label-text" for="radio12">
+                                Nie znam mocy urządzeń do podłączenia
+                                <span class="tooltip">
+                                    <img src="./img/icons/question.png" alt="baloon">
+                                    <span class="tooltip-text bottom">Podpowiemy Ci średnie wartości mocy podłączonych
+                                        urządzeń. Może to spowodować różnice w obliczeniu Twojego zapotrzebowania oraz
+                                        miesięcznych zaliczek.
+                                        <span class="arrow"></span>
+                                    </span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bottom-ghost"></div>
+
+                <div class="fixed-buttons">
+                    <div class="button prev">
+                        wstecz
+                    </div>
+                    <div class="button next">
+                        dalej
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-page page9">
+
+                <h1>7. Jaką moc urządzeń planujesz podłączyć?</h1>
+
+                <div class="equipment-box active">
+                    <div class="equipment-row">
+                        <label class="toogle-switch">
+                            <input type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                        <div class="equipment-name">
+                            Kuchenka gazowa (przygotowanie posiłków)
+                        </div>
+                    </div>
+                    <div class="power-row"></div>
+
+                    <div class="equipment-row">
+                        <label class="toogle-switch">
+                            <input type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                        <div class="equipment-name">
+                            Kocioł gazowy dwufunkcyjny (do ogrzewania domu i podgrzewania wody)
+                        </div>
+                    </div>
+                    <div class="power-row"></div>
+
+                    <div class="equipment-row">
+                        <label class="toogle-switch">
+                            <input type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                        <div class="equipment-name">
+                            Kocioł gazowy jednofunkcyjny (do ogrzewania domu)
+                        </div>
+                    </div>
+                    <div class="power-row"></div>
+
+                    <div class="equipment-row">
+                        <label class="toogle-switch">
+                            <input type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                        <div class="equipment-name">
+                            Gazowy podgrzewacz wody (podgrzewanie wody)
+                        </div>
+                    </div>
+                    <div class="power-row"></div>
+
+                    <div class="buttons">
+                        <div class="button add">
+                            <img src="./img/icons/plus.svg" alt="plus">
+                            Dodaj więcej urządzeń
+                        </div>
+                        <div class="button remove disable">
+                            <img src="./img/icons/minus.svg" alt="minus">
+                            Usuń urządzenia
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="equipment-box">
+                    <div class="equipment-row">
+                        <label class="toogle-switch">
+                            <input type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                        <div class="equipment-name">
+                            Kuchenka gazowa (przygotowanie posiłków)
+                        </div>
+                    </div>
+                    <div class="power-row"></div>
+
+                    <div class="equipment-row">
+                        <label class="toogle-switch">
+                            <input type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                        <div class="equipment-name">
+                            Kocioł gazowy dwufunkcyjny (do ogrzewania domu i podgrzewania wody)
+                        </div>
+                    </div>
+                    <div class="power-row"></div>
+
+                    <div class="equipment-row">
+                        <label class="toogle-switch">
+                            <input type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                        <div class="equipment-name">
+                            Kocioł gazowy jednofunkcyjny (do ogrzewania domu)
+                        </div>
+                    </div>
+                    <div class="power-row"></div>
+
+                    <div class="equipment-row">
+                        <label class="toogle-switch">
+                            <input type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                        <div class="equipment-name">
+                            Gazowy podgrzewacz wody (podgrzewanie wody)
+                        </div>
+                    </div>
+                    <div class="power-row"></div>
+
+                    <div class="buttons">
+                        <div class="button add disable">
+                            <img src="./img/icons/plus.svg" alt="plus">
+                            Dodaj więcej urządzeń
+                        </div>
+                        <div class="button remove">
+                            <img src="./img/icons/minus.svg" alt="minus">
+                            Usuń urządzenia
+                        </div>
+                    </div>
+                </div>
+
+                <div class="summary-calculated-box">
+
+                    <div class="calc-row">
+                        <div class="label">Moc urządzeń gazowych: </div>
+                        <div class="value">
+                            <span class="digit units-power" data-var="page9unitsPower">0</span>
+                            <span class="unit">kW<sup></sup></span>
+                        </div>
+                    </div>
+
+                    <div class="calc-row">
+                        <div class="label">Przybliżone wyliczone roczne zużycie gazu: </div>
+                        <div class="value">
+                            <span class="digit consumption-meter" data-var="page9consumptionMeter">0</span>
+                            <span class="unit">m<sup>3</sup></span>
+                        </div>
+                    </div>
+
+                    <div class="calc-row">
+                        <div class="label">Twoje deklarowane roczne zużycie gazu: </div>
+                        <div class="value">
+                            <div class="input-wrapper">
+                                <input name="digit" type="text" id="input-text9_9" data-var="inputText9_9"
+                                    placeholder="0">
+                            </div>
+                            <span class="unit">m<sup>3</sup></span>
+                            <div class="error-box"></div>
+                        </div>
+                    </div>
+
+                    <div class="calc-row contracted-power-low">
+                        <div class="label">Moc umowna do 110 kWh</div>
+                    </div>
+
+                    <div class="calc-row contracted-power-high">
+                        <div class="label">Moc umowna wyższa niż 110 kWh - skontaktuj się z naszym doradcą: link ???
+                        </div>
+                    </div>
+
+                    <div class="calc-row">
+                        <div class="label">Moc przyłączeniowa do 10 m<sup>3</sup>/h dla gazu wysokometanowego (E) lub do
+                            25 m<sup>3</sup>/h dla gazu zaazotowanego (Lw)</div>
+                    </div>
+
+                </div>
+
+                <div class="bottom-ghost"></div>
+
+                <div class="fixed-buttons">
+                    <div class="button prev">
+                        wstecz
+                    </div>
+                    <div class="button next">
+                        dalej
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-page page10">
+
+                <h1>8. Podaj okres obowiązywania umowy</h1>
+
+                <div class="radios radiosF">
+
+                    <div class="radio-container">
+                        <label class="radio">
+                            <input type="radio" id="radio13" name="radiosF" value="radio13" autocomplete="off" checked>
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="label-text" for="radio13">
+                            Nieoznaczony
+                        </label>
+                    </div>
+
+                    <div class="radio-container">
+                        <label class="radio">
+                            <input type="radio" id="radio14" name="radiosF" value="radio14" autocomplete="off">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="label-text" for="radio14">
+                            Oznaczony
+                            <span class="tooltip">
+                                <img src="./img/icons/question.png" alt="baloon">
+                                <span class="tooltip-text bottom">Okres obowiązywania umowy musi być minimum:
+                                    <span id="min-contract-term"></span>
+                                    <span class="arrow"></span>
+                                </span>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="notice">
+                    <p class="notice-header">UWAGA!</p>
+                    <p class="notice-content">
+                        Informujemy, że zgodnie z obowiązującą Taryfą Operatora Systemu Dystrybucyjnego G.EN.
+                        Operator
+                        Sp. z o.o. minimalny okres obowiązywania umowy do 110 kWh/h to 12 miesięcy - <a
+                            href="https://genoperator.pl/" target="_blank">Strona
+                            G.EN.Operator</a>
+                    </p>
+                </div>
+
+                <div class="form-box contract-period">
+                    <form action="">
+                        <div class="input-container w-100">
+                            <label>Okres obowiązywania umowy<span> *</span></label>
+                            <div class="input-wrapper date">
+                                <input type="date" id="contractdate10_1">
+                                <div class="error-box"></div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="form-box">
+                    <form action="">
+                        <div class="input-container w-100">
+                            <label>Proponowany termin rozpoczęcia dostarczania paliwa
+                                gazowego<span> *</span></label>
+                            <div class="input-wrapper date">
+                                <input type="date" id="deliverydate10_2" min="2000-01-01">
+                                <div class="error-box"></div>
+                            </div>
+                        </div>
+                        <div class="checkbox-container">
+                            <label class="checkbox">
+                                <input class="checbox10_1" type="checkbox" id="checkbox_1" name="checkbox"
+                                    autocomplete="off" checked>
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="label-text" for="checkbox_1">
+                                Przyjmuję do wiadomości, że rozpoczęcie sprzedaży paliwa gazowego nastąpi w ciągu
+                                przynajmniej 21 dni od daty doręczenia do sprzedawcy podpisanego egzemplarza umowy
+                                kompleksowej dostarczania paliwa gazowego pod warunkiem spełnienia wymogów
+                                formalnych
+                                przez Wnioskującego oraz istnienia technicznej możliwości dostarczania paliwa
+                                gazowego
+                                do Obiektu Wnioskującego.
+                            </label>
+                        </div>
+                    </form>
+                </div>
+
+                <h2>Wniosek o rozpoczęcie dostarczania paliwa gazowego:</h2>
+
+                <div class="radios radiosG">
+
+                    <div class="radio-container">
+                        <label class="radio">
+                            <input type="radio" id="radio15" name="radiosG" value="radio15" autocomplete="off" checked>
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="label-text" for="radio15">
+                            przesłałem do operatora sieci gazowej G.EN. Operator sp. z o.o.
+                        </label>
+                    </div>
+
+                    <div class="radio-container">
+                        <label class="radio">
+                            <input type="radio" id="radio16" name="radiosG" value="radio16" autocomplete="off">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="label-text" for="radio16">
+                            załączam poniżej (kompletnie uzupełniony i podpisany).
+                        </label>
+                    </div>
+                </div>
+
+                <div class="file-upload-container">
+                    <div class="file-upload">Załącz plik...
+                        <input class="appendix" type="file" id="file1"
+                            accept="image/jpeg,image/gif,image/png,application/pdf">
+                    </div>
+
+                    <div class="uploadedFileName"></div>
+                    <div class="error-box"></div>
+                </div>
+
+                <div class="bottom-ghost"></div>
+
+                <div class="fixed-buttons">
+                    <div class="button prev">
+                        wstecz
+                    </div>
+                    <div class="button next">
+                        dalej
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-page page11">
+
+                <h1>9. Twoje prawo do korzystania z Obiektu – miejsca odbioru paliwa</h1>
+
+                <div class="radios radiosH">
+
+                    <div class="radio-container">
+                        <label class="radio">
+                            <input type="radio" id="radio17" name="radiosH" value="radio17" autocomplete="off" checked>
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="label-text" for="radio17">
+                            Oświadczam, że <b>posiadam tytuł prawny</b> do korzystania z Obiektu wskazanego w
+                            punkcie
+                            „Dane
+                            miejsca odbioru paliwa” i w ramach tego prawa mogę pobierać paliwo gazowe do urządzeń
+                            gazowych.
+                        </label>
+                    </div>
+
+                    <div class="radio-container">
+                        <label class="radio">
+                            <input type="radio" id="radio18" name="radiosH" value="radio18" autocomplete="off">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="label-text" for="radio18">
+                            Oświadczam, że <b>nie posiadam tytułu prawnego</b> do korzystania z Obiektu wskazanego w
+                            punkcie „Dane miejsca odbioru paliwa”.
+                            <span class="tooltip">
+                                <img src="./img/icons/question.png" alt="baloon">
+                                <span class="tooltip-text bottom">W tym przypadku umowa jest zawierana maksymalnie na
+                                    rok.
+                                    <span class="arrow"></span>
+                                </span>
+
+                            </span>
+                        </label>
+                    </div>
+                    <p>Równocześnie przyjmuję do wiadomości, że złożenie oświadczenia niezgodnego z prawdą może
+                        spowodować
+                        odpowiedzialność przewidzianą w przepisach prawa, w szczególności odpowiedzialność
+                        finansową,
+                        również w przypadku roszczeń osób trzecich wobec G.EN. GAZ ENERGIA Sp. z o.o., związanych z
+                        faktem
+                        zawarcia Umowy kompleksowej dostarczania paliwa gazowego z osobą, która nie posiadała tytułu
+                        prawnego do wskazanej powyżej Obiektu.
+                    </p>
+
+                </div>
+
+                <div class="bottom-ghost"></div>
+
+                <div class="fixed-buttons">
+                    <div class="button prev">
+                        wstecz
+                    </div>
+                    <div class="button next">
+                        dalej
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-page page12">
+
+                <h1>10. Oświadczenie na potrzeby akcyzy i sprzedaży rezerwowej
+                </h1>
+
+                <div class="form-box">
+                    <form action="">
+                        <h2>Cel zużycia paliwa gazowego na potrzeby naliczania podatku akcyzowego:<span
+                                class="obligatory">
+                                *</span>
+                        </h2>
+                        <div class="checkbox-container">
+                            <label class="checkbox">
+                                <input class="checbox12_1" type="checkbox" id="checkbox_2" name="checkbox"
+                                    autocomplete="off" checked>
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="label-text" for="checkbox_2">
+                                Oświadczam, że paliwo gazowe będzie wykorzystywane wyłącznie w celach opałowych
+                                na
+                                potrzeby gospodarstwa domowego, niezwiązanych z prowadzeniem działalności
+                                gospodarczej
+                                ani zawodowej, w ilościach paliwa gazowego wskazanych we Wniosku. 
+                                <span class="tooltip">
+                                    <img src="./img/icons/question.png" alt="baloon">
+                                    <span class="tooltip-text bottom">Za gospodarstwo domowe nie uznaje się
+                                        nieruchomości w całości wykorzystywanej na potrzeby prowadzonej działalności
+                                        gospodarczej.
+                                        <span class="arrow"></span>
+                                    </span>
+                                </span>
+                            </label>
+
+                        </div>
+                    </form>
+                </div>
+
+                <div class="reserve-seller">
+                    Odbiorca niniejszym wskazuje
+                    <div class="input-select-container">
+                        <input type="text" id="company12_1" placeholder="Wpisz lub wybierz z listy...">
+                        <div class="chevron">
+                            <img src="./img/icons/chevron-down.svg" alt="chevron-down">
+                        </div>
+                        <div class="custom-select">
+                            <div class="custom-option">G.EN. GAZ ENERGIA sp. z o.o.</div>
+                        </div>
+                    </div>
+                     z siedzibą w
+                    <div class="input-select-container">
+                        <input type="text" id="address12_2" placeholder="Wpisz lub wybierz z listy...">
+                        <div class="chevron">
+                            <img src="./img/icons/chevron-down.svg" alt="chevron-down">
+                        </div>
+                        <div class="custom-select">
+                            <div class="custom-option">w Warszawie, ul. Domaniewska 37</div>
+                        </div>
+                    </div>
+                    , wpisanego do rejestru przedsiębiorców Krajowego Rejestru Sądowego prowadzonego przez 
+                    <div class="input-select-container">
+                        <input type="text" id="court12_3" placeholder="Wpisz lub wybierz z listy...">
+                        <div class="chevron">
+                            <img src="./img/icons/chevron-down.svg" alt="chevron-down">
+                        </div>
+                        <div class="custom-select">
+                            <div class="custom-option">Sąd Rejonowy dla m.st. Warszawy w Warszawie
+                                XIII Wydział Gospodarczy KRS </div>
+                        </div>
+                    </div>
+                    jako sprzedawcę rezerwowego w rozumieniu ustawy z dnia 10 kwietnia 1997 r. – Prawo
+                    energetyczne (tj. Dz. U. z 2022 r. poz. 1385 z późn. zm. – dalej: „Prawo energetyczne”),
+                    wybranego
+                    spośród podmiotów ujętych na liście sprzedawców oferujących sprzedaż rezerwową odbiorcom
+                    końcowym
+                    opublikowanej przez G.EN. Operator, działającego jako OSD, zgodnie z Prawem energetycznym oraz
+                    aktualnie obowiązującą Instrukcją Ruchu i Eksploatacji Sieci Dystrybucyjnej G.EN. Operator
+                    („IRiESD”).<span class="obligatory"> *</span>
+                </div>
+
+                <div class="bottom-ghost"></div>
+
+                <div class="fixed-buttons">
+                    <div class="button prev">
+                        wstecz
+                    </div>
+                    <div class="button next">
+                        dalej
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-page page13">
+
+                <h1>11. Oświadczenia odbiorcy w związku z zawarciem umowy na odległość</h1>
+
+                <div class="radios-container">
+
+                    <p>W związku z zawarciem Umowy na odległość i art. 21 ust. 2 ustawy z dnia 30 maja 2014 r. o
+                        prawach konsumenta (tj. Dz. U. z 2020 r. poz. 287 ze zm.) żądam rozpoczęcia dostarczania
+                        Paliwa
+                        gazowego przed upływem 14 dni od dnia zawarcia Umowy. Żądanie powyższe oznacza, że w razie
+                        odstąpienia od Umowy, będę zobowiązany do zapłaty za świadczenie spełnione przez Sprzedawcę
+                        do
+                        chwili odstąpienia przeze mnie od umowy, według cen i stawek opłat wynikających z Taryfy, o
+                        której mowa w Umowie, o czym zostałem uprzednio pouczony.<span class="obligatory"> *</span>
+                    </p>
+
+                    <div class="radios radiosI">
+
+                        <div class="radio-container">
+                            <label class="radio">
+                                <input type="radio" id="radio19" name="radiosI" value="radio19" autocomplete="off"
+                                    checked>
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="label-text" for="radio19">
+                                Tak
+                            </label>
+                        </div>
+
+                        <div class="radio-container">
+                            <label class="radio">
+                                <input type="radio" id="radio20" name="radiosI" value="radio20" autocomplete="off">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="label-text" for="radio20">
+                                Nie
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bottom-ghost"></div>
+
+                <div class="fixed-buttons">
+                    <div class="button prev">
+                        wstecz
+                    </div>
+                    <div class="button next">
+                        dalej
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="form-page page14">
+
+                <h1>12. Twoje zgody marketingowe</h1>
+
+                <div class="radios-container">
+
+                    <p>1. Wyrażam zgodę na przetwarzanie moich danych osobowych przez G.EN. GAZ ENERGIA Sp. z o.o. w
+                        celach marketingowych w zakresie produktów i usług własnych G.EN. GAZ ENERGIA Sp. z o.o., w
+                        tym
+                        również po zakończeniu Umowy.<span class="obligatory"> *</span></p>
+
+                    <div class="radios radiosJ">
+
+                        <div class="radio-container">
+                            <label class="radio">
+                                <input type="radio" id="radio21" name="radiosJ" value="radio21" autocomplete="off"
+                                    checked>
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="label-text" for="radio21">
+                                Tak
+                            </label>
+                        </div>
+
+                        <div class="radio-container">
+                            <label class="radio">
+                                <input type="radio" id="radio22" name="radiosJ" value="radio22" autocomplete="off">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="label-text" for="radio22">
+                                Nie
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="radios-container">
+
+                    <p>2. Wyrażam zgodę na przetwarzanie moich danych osobowych przez G.EN. GAZ ENERGIA Sp. z o.o. w
+                        celach marketingowych w zakresie produktów i usług podmiotów powiązanych kapitałowo z G.EN.
+                        GAZ
+                        ENERGIA Sp. z o.o., w tym również po zakończeniu Umowy.<span class="obligatory"> *</span></p>
+
+                    <div class="radios radiosK">
+
+                        <div class="radio-container">
+                            <label class="radio">
+                                <input type="radio" id="radio23" name="radiosK" value="radio23" autocomplete="off"
+                                    checked>
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="label-text" for="radio23">
+                                Tak
+                            </label>
+                        </div>
+
+                        <div class="radio-container">
+                            <label class="radio">
+                                <input type="radio" id="radio24" name="radiosK" value="radio24" autocomplete="off">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="label-text" for="radio24">
+                                Nie
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="radios-container">
+
+                    <p>3. Wyrażam zgodę na otrzymywanie informacji handlowej przesyłanych przez G.EN. GAZ ENERGIA
+                        Sp. z
+                        o.o. poprzez e-mail lub konto eBOK, w tym również po zakończeniu Umowy.<span class="obligatory">
+                            *</span><span class="tooltip">
+                            <img src="./img/icons/question.png" alt="baloon">
+                            <span class="tooltip-text bottom">W rozumieniu art. 2 pkt 2 ustawy z dnia 18 lipca 2002 roku
+                                o świadczeniu usług drogą elektroniczną.
+                                <span class="arrow"></span>
+                            </span>
+                        </span></p>
+
+                    <div class="radios radiosL">
+
+                        <div class="radio-container">
+                            <label class="radio">
+                                <input type="radio" id="radio25" name="radiosL" value="radio25" autocomplete="off"
+                                    checked>
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="label-text" for="radio25">
+                                Tak
+                            </label>
+                        </div>
+
+                        <div class="radio-container">
+                            <label class="radio">
+                                <input type="radio" id="radio26" name="radiosL" value="radio26" autocomplete="off">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="label-text" for="radio26">
+                                Nie
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="radios-container">
+
+                    <p>4. Wyrażam zgodę na marketing bezpośredni przez G.EN. GAZ ENERGIA Sp. z o.o. poprzez SMS
+                        lub telefon, w tym również po zakończeniu Umowy.<span class="obligatory"> *</span><span
+                            class="tooltip">
+                            <img src="./img/icons/question.png" alt="baloon">
+                            <span class="tooltip-text bottom">Przy użyciu automatycznych systemów wywołujących i
+                                telekomunikacyjnych urządzeń końcowych zgodnie z art. 172 ustawy z dnia 16 lipca 2004 r.
+                                Prawa telekomunikacyjnego.
+                                <span class="arrow"></span>
+                            </span>
+                        </span></p>
+
+                    <div class="radios radiosM">
+
+                        <div class="radio-container">
+                            <label class="radio">
+                                <input type="radio" id="radio27" name="radiosM" value="radio27" autocomplete="off"
+                                    checked>
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="label-text" for="radio27">
+                                Tak
+                            </label>
+                        </div>
+
+                        <div class="radio-container">
+                            <label class="radio">
+                                <input type="radio" id="radio28" name="radiosM" value="radio28" autocomplete="off">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="label-text" for="radio28">
+                                Nie
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="radios-container">
+
+                    <p>5. Wyrażam zgodę na przetwarzanie moich danych osobowych przez G.EN. GAZ ENERGIA Sp. z o.o. w
+                        celach marketingowych w zakresie produktów i usług własnych G.EN. GAZ ENERGIA Sp. z o.o., w
+                        tym
+                        również po zakończeniu Umowy.
+                        <span class="obligatory"> *</span><span class="tooltip">
+                            <img src="./img/icons/question.png" alt="baloon">
+                            <span class="tooltip-text bottom">W rozumieniu art. 2 pkt 2 ustawy z dnia 18 lipca 2002 roku
+                                o świadczeniu usług drogą elektroniczną.
+                                <span class="arrow"></span>
+                            </span>
+                        </span>
+                    </p>
+
+                    <div class="radios radiosN">
+
+                        <div class="radio-container">
+                            <label class="radio">
+                                <input type="radio" id="radio29" name="radiosN" value="radio29" autocomplete="off"
+                                    checked>
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="label-text" for="radio29">
+                                Tak
+                            </label>
+                        </div>
+
+                        <div class="radio-container">
+                            <label class="radio">
+                                <input type="radio" id="radio30" name="radiosN" value="radio30" autocomplete="off">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="label-text" for="radio30">
+                                Nie
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="radios-container">
+
+                    <p>6. Wyrażam zgodę na marketing bezpośredni przez podmioty z grupy kapitałowej G.EN. GAZ
+                        ENERGIA
+                        Sp. z o.o. poprzez SMS lub telefon w tym również po zakończeniu Umowy.
+                        <span class="obligatory"> *</span>
+                        <span class="tooltip">
+                            <img src="./img/icons/question.png" alt="baloon">
+                            <span class="tooltip-text">Przy użyciu automatycznych systemów wywołujących i
+                                telekomunikacyjnych urządzeń końcowych zgodnie z art. 172 ustawy z dnia 16 lipca 2004 r.
+                                Prawa telekomunikacyjnego.
+                                <span class="arrow"></span>
+                            </span>
+                        </span>
+                    </p>
+
+                    <div class="radios radiosO">
+
+                        <div class="radio-container">
+                            <label class="radio">
+                                <input type="radio" id="radio31" name="radiosO" value="radio31" autocomplete="off"
+                                    checked>
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="label-text" for="radio31">
+                                Tak
+                            </label>
+                        </div>
+
+                        <div class="radio-container">
+                            <label class="radio">
+                                <input type="radio" id="radio32" name="radiosO" value="radio32" autocomplete="off">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="label-text" for="radio32">
+                                Nie
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="radios-container">
+
+                    <p>7. Wyrażam zgodę na udostepnienie moich danych osobowych przez G.EN. GAZ ENERGIA Sp. z o.o.
+                        podmiotom z grupy kapitałowej G.EN. GAZ ENERGIA Sp. z o.o. w zakresie niezbędnym do
+                        podejmowania
+                        wobec mnie działań marketingowych.<span class="obligatory"> *</span>
+                    </p>
+
+                    <div class="radios radiosP">
+
+                        <div class="radio-container">
+                            <label class="radio">
+                                <input type="radio" id="radio33" name="radiosP" value="radio33" autocomplete="off"
+                                    checked>
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="label-text" for="radio33">
+                                Tak
+                            </label>
+                        </div>
+
+                        <div class="radio-container">
+                            <label class="radio">
+                                <input type="radio" id="radio34" name="radiosP" value="radio34" autocomplete="off">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="label-text" for="radio34">
+                                Nie
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bottom-ghost"></div>
+
+                <div class="fixed-buttons">
+                    <div class="button prev">
+                        wstecz
+                    </div>
+                    <div class="button next">
+                        dalej
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="form-page page15">
+
+                <h1>13. Informacja o danych osobowych</h1>
+
+                <div class="ol-container">
+                    <ol>
+                        <li>Administratorem danych osobowych jest G.EN. GAZ ENERGIA Sp. z o.o. z siedzibą w
+                            Warszawie,
+                            ul. Domaniewska 37, 02-672, Warszawa. W razie pytań możecie się Państwo skontaktować z
+                            naszym Inspektorem Ochrony Danych, Maciejem Chwalińskim, za pomocą e-mail:
+                            iod@gen.com.pl
+                            lub wysyłając korespondencję na wskazany powyżej adres pocztowy z dopiskiem „ochrona
+                            danych
+                            osobowych”.</li>
+                        <li>Wypełniając Wniosek o zawarcie umowy kompleksowej dostarczania paliwa gazowego nasza
+                            firma
+                            będzie przetwarzać dotyczące Państwa dane osobowe, w celu podjęcia działań prowadzących
+                            do
+                            zawarcia umowy. Podstawę prawną przetwarzania stanowi w takim wypadku art. 6 ust. 1 lit.
+                            B.
+                        </li>
+                        <li>Podanie danych jest dobrowolne, jednak niezbędne do zawarcia i realizacji umowy.
+                            Mogą Państwo zdecydować się na zawarcie umowy z G.EN. GAZ ENERGIA Sp. z o.o. drogą
+                            online,
+                            przy wykorzystaniu dedykowanego narzędzia. Jest to całkowicie dobrowolne, jednak w takim
+                            wypadku niezbędne będzie podanie adresu e-mail oraz numeru telefonu.</li>
+                        <li>Mogą Państwo żądać od nas: uzyskania dostępu, sprostowania, usunięcia, ograniczenia
+                            przetwarzania, wniesienia sprzeciwu, przeniesienia Waszych danych osobowych, powszechnie
+                            używanym wycofania zgody wyrażonej na przetwarzanie danych osobowych. W przypadku
+                            zastrzeżeń
+                            związanych z przetwarzaniem danych osobowych mają Państwo prawo do wniesienia skargi do
+                            Prezesa Urzędu Ochrony Danych Osobowych.</li>
+                        <li>Pełne informacje na temat przetwarzania Państwa danych osobowych możecie uzyskać na
+                            naszej
+                            stronie internetowej: www.gen.com.pl w zakładce <a
+                                href="https://www.gen.com.pl/rodo">„Ochrona
+                                danych osobowych”</a>.</li>
+                    </ol>
+                </div>
+
+                <div class="bottom-ghost"></div>
+
+                <div class="fixed-buttons">
+                    <div class="button prev">
+                        wstecz
+                    </div>
+                    <div class="button next">
+                        dalej
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="form-page page16">
+
+                <h1>14. Twoje załączniki i pole na dodatkowe informacje</h1>
+
+                <div class="form-box">
+                    <form action="">
+                        <div class="input-container w-100">
+                            <label>Dodatkowe informacje</label>
+                            <textarea id="textarea16_1"></textarea>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="file-upload-double-container">
+
+                    <div class="file-upload-container">
+                        <div class="file-upload-multi">Załącz pliki...
+                            <input class="appendix-multi" type="file" id="file2" name="file2[]"
+                                accept="image/jpeg,image/gif,image/png,application/pdf" multiple>
+                        </div>
+
+                        <div class="uploadedFileName"></div>
+                    </div>
+
+                </div>
+
+                <div class="bottom-ghost"></div>
+
+                <div class="fixed-buttons">
+                    <div class="button prev">
+                        wstecz
+                    </div>
+                    <div class="button next">
+                        wyślij
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="form-page page17">
+
+                <div class="bottom-ghost"></div>
+
+                <div class="thanks">
+                    Dziękujemy za wypełnienie formularza
+                </div>
+
+                <div class="getPDFForm">
+                    Pobierz kopię formularza w PDF
+                </div>
+
+
+                <div class="bottom-ghost"></div>
+
+                <div class="loading-wrapper">
+                    <img src="./img/icons/loading.svg" alt="loading">
+                </div>
+
+            </div>
+
+            <div class="form-page form">
+
+                <h1>Formularz wysyłający</h1>
+
+                <form method="post" id="hidden-summary-form" class="" enctype="multipart/form-data">
+
+                    <input type='text' name='page1radios'>
+                    <input type='text' name='page3radios'>
+                    <input type='text' name='inputText4_1'>
+                    <input type='text' name='inputText4_2'>
+                    <input type='text' name='select4_1'>
+                    <input type='text' name='inputText4_3'>
+                    <input type='text' name='inputText4_4'>
+                    <input type='text' name='inputText4_5'>
+                    <input type='text' name='inputText4_6'>
+                    <input type='text' name='inputText4_7'>
+                    <input type='text' name='inputText4_8'>
+                    <input type='text' name='page4boolean'>
+                    <input type='text' name='inputText4_9'>
+                    <input type='text' name='inputText4_10'>
+                    <input type='text' name='select4_2'>
+                    <input type='text' name='inputText4_11'>
+                    <input type='text' name='inputText4_12'>
+                    <input type='text' name='inputText4_13'>
+                    <input type='text' name='inputText4_14'>
+                    <input type='text' name='inputText4_15'>
+                    <input type='text' name='inputText4_16'>
+                    <input type='text' name='page5radios'>
+                    <input type='text' name='inputText5_1'>
+                    <input type='text' name='inputText5_2'>
+                    <input type='text' name='inputText5_3'>
+                    <input type='text' name='inputText5_4'>
+                    <input type='text' name='page6radios'>
+                    <input type='text' name='inputText6_1'>
+                    <input type='text' name='inputText6_2'>
+                    <input type='text' name='date6_1'>
+                    <input type='text' name='page7radios'>
+                    <input type='text' name='inputText7_1'>
+                    <input type='text' name='inputText7_2'>
+                    <input type='text' name='inputText7_3'>
+                    <input type='text' name='inputText7_4'>
+                    <input type='text' name='inputText7_5'>
+                    <input type='text' name='inputText7_6'>
+                    <input type='text' name='inputText7_7'>
+                    <input type='text' name='inputText8_1'>
+                    <input type='text' name='inputText8_2'>
+                    <input type='text' name='page8radios'>
+                    <input type='text' name='page9checkbox1'>
+                    <input type='text' name='page9checkbox2'>
+                    <input type='text' name='page9checkbox3'>
+                    <input type='text' name='page9checkbox4'>
+                    <input type='text' name='page9checkbox5'>
+                    <input type='text' name='page9checkbox6'>
+                    <input type='text' name='page9checkbox7'>
+                    <input type='text' name='page9checkbox8'>
+                    <input type='text' name='inputText9_1'>
+                    <input type='text' name='inputText9_2'>
+                    <input type='text' name='inputText9_3'>
+                    <input type='text' name='inputText9_4'>
+                    <input type='text' name='inputText9_5'>
+                    <input type='text' name='inputText9_6'>
+                    <input type='text' name='inputText9_7'>
+                    <input type='text' name='inputText9_8'>
+                    <input type='text' name='page9unitsPower'>
+                    <input type='text' name='page9consumptionMeter'>
+                    <input type='text' name='inputText9_9'>
+                    <input type='text' name='page10radiosF'>
+                    <input type='text' name='date10_1'>
+                    <input type='text' name='date10_2'>
+                    <input type='text' name='page10checkbox10_1'>
+                    <input type='text' name='page10radiosG'>
+                    <input type='text' name='page11radios'>
+                    <input type='text' name='page12checkbox12_1'>
+                    <input type='text' name='inputText12_1'>
+                    <input type='text' name='inputText12_2'>
+                    <input type='text' name='inputText12_3'>
+                    <input type='text' name='page13radios'>
+                    <input type='text' name='page14radiosJ'>
+                    <input type='text' name='page14radiosK'>
+                    <input type='text' name='page14radiosL'>
+                    <input type='text' name='page14radiosM'>
+                    <input type='text' name='page14radiosN'>
+                    <input type='text' name='page14radiosO'>
+                    <input type='text' name='page14radiosP'>
+                    <input type='text' name='textarea16_1'>
+                    <input type='file' name='mySingleFile'>
+                    <input type='file' name='myMultiFile[]' multiple>
+                    <input type="hidden" name="recaptchaResponse" id="recaptchaResponse">
+
+
+                    <button type="submit" class="btn send-form" id="submit-button">Wyślij</button>
+                </form>
+
+                <div class="send-message-container"></div>
+
+                <div class="bottom-ghost"></div>
+
+                <div class="fixed-buttons">
+                    <div class="button prev">wstecz</div>
+                    <div class="button next disabled">dalej</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.google.com/recaptcha/api.js?render=6Lf2hcIpAAAAAO1sgP7bkMbS_dHflAHZV8bG8eFO"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="./js/main.js?cache_bust=123"></script>
+</body>
+
+</html>
