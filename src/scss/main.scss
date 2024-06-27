@@ -1312,6 +1312,13 @@ span.obligatory {
             .radio-container {
                 width: calc(50% - 15px);
                 flex-shrink: 0;
+                scale: 0.9;
+            }
+        }
+
+        &.time {
+            .radio-container {
+                scale: 0.9;
             }
         }
 

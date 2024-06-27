@@ -1078,6 +1078,10 @@ span.obligatory {
 .page11 .radios-container.property-type .radio-container {
   width: calc(50% - 15px);
   flex-shrink: 0;
+  scale: 0.9;
+}
+.page11 .radios-container.time .radio-container {
+  scale: 0.9;
 }
 .page11 .radios-container .date-wrapper {
   gap: 20px;
