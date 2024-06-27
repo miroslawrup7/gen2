@@ -119,6 +119,7 @@ let page7formValidatePerformed = false
 let page8formValidatePerformed = false
 let page9formValidatePerformed = false
 let page12formValidatePerformed = false
+let page14formValidatePerformed = false
 
 
 const containerLoc = document.querySelector(".container")
@@ -268,6 +269,8 @@ const page14inputRadiosMArrLoc = document.querySelectorAll(".page14 .radiosM inp
 const page14inputRadiosNArrLoc = document.querySelectorAll(".page14 .radiosN input")
 const page14inputRadiosOArrLoc = document.querySelectorAll(".page14 .radiosO input")
 const page14inputRadiosPArrLoc = document.querySelectorAll(".page14 .radiosP input")
+
+const inputsPage14Array = [page14inputRadiosJArrLoc, page14inputRadiosKArrLoc, page14inputRadiosLArrLoc, page14inputRadiosMArrLoc, page14inputRadiosNArrLoc, page14inputRadiosOArrLoc, page14inputRadiosPArrLoc]
 
 const page16textAreaLoc = document.querySelector(".page16 #textarea16_1")
 const page16file16_1Loc = document.querySelector(".page16 #file2")
@@ -433,8 +436,11 @@ buttonNextArrLoc.forEach((elem) => {
         }
 
         if (actualPage.classList.contains("page14")) {
-            readValuesPage14()
-            allowNext = true
+            page14formValidatePerformed = true
+            if (validatePage14()) {
+                readValuesPage14()
+                allowNext = true
+            }
         }
 
         if (actualPage.classList.contains("page15")) {
@@ -627,6 +633,16 @@ const validateDigits = (value) => {
 const validateCheckbox = (value)=> {
     if (!value.checked) return false
     return true
+}
+
+const validateRadio = (radiosArr)=> {
+    let checkedRadio = false
+    radiosArr.forEach((elem)=>{
+        if (elem.checked) {
+            checkedRadio = true
+        }
+    })
+    return checkedRadio
 }
 
 const validate22Characters = (value)=> {
@@ -1725,8 +1741,6 @@ const validatePage9 = () => {
         }
     }
 
-    console.log(page9contractedPowerHigh)
-
     if (page9contractedPowerHigh) {
         validateSuccess = false
     }
@@ -2310,6 +2324,53 @@ page13inputRadiosArrLoc.forEach((elem, index) => {
 })
 
 // page 14
+
+inputsPage14Array.forEach((elem)=> {
+    elem.forEach((el) => {
+        el.addEventListener("change", ()=>{
+            if (page14formValidatePerformed){
+                validatePage14()
+            }
+        })
+    })
+})
+
+
+const validatePage14 = ()=> {
+
+    let validateSuccess = true
+
+    let validatedArray = inputsPage14Array
+
+    validatedArray.forEach((elem)=>{
+
+        let errorValidationFlag = true
+
+        if (!validateRadio(elem)) {
+            elem.forEach((el)=>{
+                el.closest(".radio-container").querySelector(".label-text").classList.add("error")
+            })
+            
+            validateSuccess = false
+            errorValidationFlag = false
+        } else {
+            if (errorValidationFlag) {
+                elem.forEach((el)=>{
+                    el.closest(".radio-container").querySelector(".label-text").classList.remove("error")
+                })
+            }
+      
+        }
+  
+    })
+
+
+    if (validateSuccess) {
+        return true
+    } else {
+        return false
+    }
+}
 
 const readValuesPage14 = ()=> {
     if (page14inputRadiosJArrLoc[0].checked) {
