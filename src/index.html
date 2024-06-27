@@ -83,8 +83,7 @@
                     <div class="radios">
                         <div class="radio-container">
                             <label class="radio">
-                                <input type="radio" id="radio3" name="radiosA" value="radio3" autocomplete="off"
-                                    checked>
+                                <input type="radio" id="radio3" name="radiosA" value="radio3" autocomplete="off">
                                 <span class="checkmark"></span>
                             </label>
                             <label class="label-text" for="radio3">Online</label>
@@ -197,7 +196,7 @@
                             </div>
                         </div>
                         <div class="input-container m2-w-100">
-                            <label>E-mail<span> *</span></label>
+                            <label>E-mail<span class="asterix_email4_7"> *</span></label>
                             <div class="input-wrapper">
                                 <input name="email" type="text" id="email4_7" data-var="inputText4_7"
                                     placeholder="Wpisz">
@@ -282,7 +281,7 @@
                             </div>
                         </div>
                         <div class="input-container m2-w-100">
-                            <label>E-mail<span> *</span></label>
+                            <label>E-mail<span class="asterix_email4_15"> *</span></label>
                             <div class="input-wrapper">
                                 <input name="email" type="text" id="email4_15" data-var="inputText4_15"
                                     placeholder="Wpisz">
@@ -321,7 +320,7 @@
                 <div class="radios">
                     <div class="radio-container">
                         <label class="radio">
-                            <input type="radio" id="radio5" name="radiosB" value="radio5" autocomplete="off" checked>
+                            <input type="radio" id="radio5" name="radiosB" value="radio5" autocomplete="off">
                             <span class="checkmark"></span>
                         </label>
                         <label class="label-text" for="radio5">Taki sam, jak adres zamieszkania</label>
@@ -390,7 +389,7 @@
                 <div class="radios">
                     <div class="radio-container">
                         <label class="radio">
-                            <input type="radio" id="radio7" name="radiosC" value="radio7" autocomplete="off" checked>
+                            <input type="radio" id="radio7" name="radiosC" value="radio7" autocomplete="off">
                             <span class="checkmark"></span>
                         </label>
                         <label class="label-text" for="radio7">Osobiście</label>
@@ -463,17 +462,35 @@
                         <div class="input-container w-100">
                             <label>Nr warunków technicznych przyłączenia do sieci gazowej
                                 <span> *</span>
+                                <span class="tooltip">
+                                    <img src="./img/icons/question.png" alt="baloon">
+                                    <span class="tooltip-text bottom">
+                                        NUMER WARUNKÓW / UMOWY O PRZYŁĄCZENIE - jest to dwunastocyfrowy nr, który
+                                        znajdziesz na dokumentach wystawionych przez operatora sieci.
+                                        <span class="arrow"></span>
+                                    </span>
+                                </span>
                             </label>
 
                             <div class="input-wrapper">
-                                <input type="text" id="condition7_1" data-var="inputText7_1" placeholder="Wpisz">
+                                <input name="wt" type="text" id="condition7_1" data-var="inputText7_1"
+                                    placeholder="Wpisz">
                                 <div class="error-box"></div>
                             </div>
                         </div>
                         <div class="input-container w-100 PPG">
-                            <label>Nr PPG<span> *</span></label>
+                            <label>Nr PPG
+                                <span> *</span>
+                                <span class="tooltip">
+                                    <img src="./img/icons/question.png" alt="baloon">
+                                    <span class="tooltip-text bottom">
+                                        NUMER PPG – nr punktu poboru gazu znajdziesz na każdej fakturze – ma 22 cyfry.
+                                        <span class="arrow"></span>
+                                    </span>
+                                </span>
+                            </label>
                             <div class="input-wrapper">
-                                <input type="text" id="ppg7_2" data-var="inputText7_2" placeholder="Wpisz">
+                                <input name="ppg" type="text" id="ppg7_2" data-var="inputText7_2" placeholder="Wpisz">
                                 <div class="error-box"></div>
                             </div>
                         </div>
@@ -502,14 +519,16 @@
                         <div class="input-container w-25 m1-w-50 m3-w-100">
                             <label>Nr budynku / lokalu<span> *</span></label>
                             <div class=" input-wrapper">
-                                <input type="text" id="houseno7_6" data-var="inputText7_6" placeholder="Wpisz">
+                                <input name="nr_bud" type="text" id="houseno7_6" data-var="inputText7_6"
+                                    placeholder="Wpisz">
                                 <div class="error-box"></div>
                             </div>
                         </div>
                         <div class="input-container w-25 m1-w-50 m3-w-100">
                             <label>Nr działki</label>
                             <div class="input-wrapper">
-                                <input type="text" id="parcelno7_7" data-var="inputText7_7" placeholder="Wpisz">
+                                <input name="nr_dzl" type="text" id="parcelno7_7" data-var="inputText7_7"
+                                    placeholder="Wpisz">
                                 <div class="error-box"></div>
                             </div>
                         </div>
@@ -562,8 +581,7 @@
 
                         <div class="radio-container">
                             <label class="radio">
-                                <input type="radio" id="radio11" name="radiosE" value="radio11" autocomplete="off"
-                                    checked>
+                                <input type="radio" id="radio11" name="radiosE" value="radio11" autocomplete="off">
                                 <span class="checkmark"></span>
                             </label>
                             <label class="label-text" for="radio11">
@@ -750,7 +768,7 @@
                     </div>
 
                     <div class="calc-row">
-                        <div class="label">Twoje deklarowane roczne zużycie gazu: </div>
+                        <div class="label"><strong>Twoje deklarowane roczne zużycie gazu: </strong></div>
                         <div class="value">
                             <div class="input-wrapper">
                                 <input name="digit" type="text" id="input-text9_9" data-var="inputText9_9"
@@ -766,7 +784,7 @@
                     </div>
 
                     <div class="calc-row contracted-power-high">
-                        <div class="label">Moc umowna wyższa niż 110 kWh - skontaktuj się z naszym doradcą: link ???
+                        <div class="label">Moc umowna wyższa niż 110 kWh! <button>Proszę o kontakt</button>
                         </div>
                     </div>
 
@@ -797,7 +815,7 @@
 
                     <div class="radio-container">
                         <label class="radio">
-                            <input type="radio" id="radio13" name="radiosF" value="radio13" autocomplete="off" checked>
+                            <input type="radio" id="radio13" name="radiosF" value="radio13" autocomplete="off">
                             <span class="checkmark"></span>
                         </label>
                         <label class="label-text" for="radio13">
@@ -859,7 +877,7 @@
                         <div class="checkbox-container">
                             <label class="checkbox">
                                 <input class="checbox10_1" type="checkbox" id="checkbox_1" name="checkbox"
-                                    autocomplete="off" checked>
+                                    autocomplete="off">
                                 <span class="checkmark"></span>
                             </label>
                             <label class="label-text" for="checkbox_1">
@@ -881,7 +899,7 @@
 
                     <div class="radio-container">
                         <label class="radio">
-                            <input type="radio" id="radio15" name="radiosG" value="radio15" autocomplete="off" checked>
+                            <input type="radio" id="radio15" name="radiosG" value="radio15" autocomplete="off">
                             <span class="checkmark"></span>
                         </label>
                         <label class="label-text" for="radio15">
@@ -930,20 +948,6 @@
 
                     <div class="radio-container">
                         <label class="radio">
-                            <input type="radio" id="radio17" name="radiosH" value="radio17" autocomplete="off" checked>
-                            <span class="checkmark"></span>
-                        </label>
-                        <label class="label-text" for="radio17">
-                            Oświadczam, że <b>posiadam tytuł prawny</b> do korzystania z Obiektu wskazanego w
-                            punkcie
-                            „Dane
-                            miejsca odbioru paliwa” i w ramach tego prawa mogę pobierać paliwo gazowe do urządzeń
-                            gazowych.
-                        </label>
-                    </div>
-
-                    <div class="radio-container">
-                        <label class="radio">
                             <input type="radio" id="radio18" name="radiosH" value="radio18" autocomplete="off">
                             <span class="checkmark"></span>
                         </label>
@@ -960,6 +964,115 @@
                             </span>
                         </label>
                     </div>
+
+                    <div class="radio-container">
+                        <label class="radio">
+                            <input type="radio" id="radio17" name="radiosH" value="radio17" autocomplete="off">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="label-text" for="radio17">
+                            Oświadczam, że <b>posiadam tytuł prawny</b> do korzystania z Obiektu wskazanego w
+                            punkcie
+                            „Dane
+                            miejsca odbioru paliwa” i w ramach tego prawa mogę pobierać paliwo gazowe do urządzeń
+                            gazowych.
+                        </label>
+                    </div>
+
+                    <div class="form-box">
+
+                        <form class="property-type" action="">
+                            <label>Tytuł prawny:</label>
+                            <div class="radios-container property-type">
+                                <div class="radio-container">
+                                    <label class="radio">
+                                        <input type="radio" id="radio17A" name="radiosH_1" value="radio17A"
+                                            autocomplete="off">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="label-text" for="radio17A">
+                                        Prawo własności
+                                    </label>
+                                </div>
+                                <div class="radio-container">
+                                    <label class="radio">
+                                        <input type="radio" id="radio18A" name="radiosH_1" value="radio18A"
+                                            autocomplete="off">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="label-text" for="radio18A">
+                                        Prawo współwłasności
+                                    </label>
+                                </div>
+                                <div class="radio-container">
+                                    <label class="radio">
+                                        <input type="radio" id="radio19A" name="radiosH_1" value="radio19A"
+                                            autocomplete="off">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="label-text" for="radio19A">
+                                        Umowa najmu
+                                    </label>
+                                </div>
+                                <div class="radio-container">
+                                    <label class="radio">
+                                        <input type="radio" id="radio20A" name="radiosH_1" value="radio20A"
+                                            autocomplete="off">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="label-text" for="radio20A">
+                                        Spółdzielcze prawo do lokalu
+                                    </label>
+                                </div>
+                                <div class="radio-container">
+                                    <label class="radio">
+                                        <input type="radio" id="radio21A" name="radiosH_1" value="radio21A"
+                                            autocomplete="off">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="label-text" for="radio21A">
+                                        Inne
+                                    </label>
+                                </div>
+                            </div>
+                        </form>
+
+                        <form class="time" action="">
+                            <label>Na czas:</label>
+                            <div class="radios-container">
+                                <div class="radio-container xl-w-50">
+                                    <label class="radio">
+                                        <input type="radio" id="radio17B" name="radiosH_2" value="radio17B"
+                                            autocomplete="off">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="label-text" for="radio17B">
+                                        Nieoznaczony
+                                    </label>
+                                </div>
+                                <div class="date-wrapper xl-w-50">
+                                    <div class="radio-container">
+                                        <label class="radio">
+                                            <input type="radio" id="radio18B" name="radiosH_2" value="radio18B"
+                                                autocomplete="off">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="label-text" for="radio18B">
+                                            Oznaczony do dnia:
+                                        </label>
+                                    </div>
+                                    <div class="input-wrapper date">
+                                        <input type="date" id="contractdate11_1">
+                                        <div class="error-box"></div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </form>
+                    </div>
+
+
                     <p>Równocześnie przyjmuję do wiadomości, że złożenie oświadczenia niezgodnego z prawdą może
                         spowodować
                         odpowiedzialność przewidzianą w przepisach prawa, w szczególności odpowiedzialność
@@ -998,7 +1111,7 @@
                         <div class="checkbox-container">
                             <label class="checkbox">
                                 <input class="checbox12_1" type="checkbox" id="checkbox_2" name="checkbox"
-                                    autocomplete="off" checked>
+                                    autocomplete="off">
                                 <span class="checkmark"></span>
                             </label>
                             <label class="label-text" for="checkbox_2">
@@ -1095,8 +1208,7 @@
 
                         <div class="radio-container">
                             <label class="radio">
-                                <input type="radio" id="radio19" name="radiosI" value="radio19" autocomplete="off"
-                                    checked>
+                                <input type="radio" id="radio19" name="radiosI" value="radio19" autocomplete="off">
                                 <span class="checkmark"></span>
                             </label>
                             <label class="label-text" for="radio19">
@@ -1144,8 +1256,7 @@
 
                         <div class="radio-container">
                             <label class="radio">
-                                <input type="radio" id="radio21" name="radiosJ" value="radio21" autocomplete="off"
-                                    checked>
+                                <input type="radio" id="radio21" name="radiosJ" value="radio21" autocomplete="off">
                                 <span class="checkmark"></span>
                             </label>
                             <label class="label-text" for="radio21">
@@ -1176,8 +1287,7 @@
 
                         <div class="radio-container">
                             <label class="radio">
-                                <input type="radio" id="radio23" name="radiosK" value="radio23" autocomplete="off"
-                                    checked>
+                                <input type="radio" id="radio23" name="radiosK" value="radio23" autocomplete="off">
                                 <span class="checkmark"></span>
                             </label>
                             <label class="label-text" for="radio23">
@@ -1214,8 +1324,7 @@
 
                         <div class="radio-container">
                             <label class="radio">
-                                <input type="radio" id="radio25" name="radiosL" value="radio25" autocomplete="off"
-                                    checked>
+                                <input type="radio" id="radio25" name="radiosL" value="radio25" autocomplete="off">
                                 <span class="checkmark"></span>
                             </label>
                             <label class="label-text" for="radio25">
@@ -1252,8 +1361,7 @@
 
                         <div class="radio-container">
                             <label class="radio">
-                                <input type="radio" id="radio27" name="radiosM" value="radio27" autocomplete="off"
-                                    checked>
+                                <input type="radio" id="radio27" name="radiosM" value="radio27" autocomplete="off">
                                 <span class="checkmark"></span>
                             </label>
                             <label class="label-text" for="radio27">
@@ -1292,8 +1400,7 @@
 
                         <div class="radio-container">
                             <label class="radio">
-                                <input type="radio" id="radio29" name="radiosN" value="radio29" autocomplete="off"
-                                    checked>
+                                <input type="radio" id="radio29" name="radiosN" value="radio29" autocomplete="off">
                                 <span class="checkmark"></span>
                             </label>
                             <label class="label-text" for="radio29">
@@ -1333,8 +1440,7 @@
 
                         <div class="radio-container">
                             <label class="radio">
-                                <input type="radio" id="radio31" name="radiosO" value="radio31" autocomplete="off"
-                                    checked>
+                                <input type="radio" id="radio31" name="radiosO" value="radio31" autocomplete="off">
                                 <span class="checkmark"></span>
                             </label>
                             <label class="label-text" for="radio31">
@@ -1366,8 +1472,7 @@
 
                         <div class="radio-container">
                             <label class="radio">
-                                <input type="radio" id="radio33" name="radiosP" value="radio33" autocomplete="off"
-                                    checked>
+                                <input type="radio" id="radio33" name="radiosP" value="radio33" autocomplete="off">
                                 <span class="checkmark"></span>
                             </label>
                             <label class="label-text" for="radio33">

@@ -164,6 +164,9 @@ const inputsPage4Array1 = [page4input_fname4_1, page4input_sname4_2, page4input_
 const inputsPage4Array2 = [page4input_fname4_9, page4input_sname4_10, page4input_ID4_11, page4input_address4_12, page4input_postcode4_13, page4input_locality4_14, page4input_email4_15, page4input_phone4_16]
 const inputsPage4Array3 = [page4select_IDType4_1, page4select_IDType4_2]
 
+const page4asterix_email4_7 = document.querySelector(".asterix_email4_7")
+const page4asterix_email4_15 = document.querySelector(".asterix_email4_15")
+
 const page5radioArrLoc = document.querySelectorAll(".page5 .radios input")
 const page5formLoc = document.querySelector(".page5 .form-box")
 
@@ -229,6 +232,8 @@ const page10fileUploadContainerLoc = document.querySelector(".page10 .file-uploa
 const page10inputRadiosFArrLoc = document.querySelectorAll(".page10 .radiosF input")
 const page10contractPeriodFormLoc = document.querySelector(".page10 .contract-period")
 
+const page10noticeLoc = document.querySelector(".page10 .notice")
+
 const page10input_contractdate10_1 = document.querySelector(".page10 #contractdate10_1")
 const page10input_deliverydate10_2 = document.querySelector(".page10 #deliverydate10_2")
 
@@ -240,6 +245,7 @@ const checkboxPage10checkbox10_1 = document.querySelector(".page10 .checbox10_1"
 const page10file10_1Loc = document.querySelector(".page10 #file1")
 
 const page11inputRadiosArrLoc = document.querySelectorAll(".page11 .radiosH input")
+const page11formBoxLoc = document.querySelector(".page11 .form-box")
 
 const page12inputSelectContainerArrLoc = document.querySelectorAll(".page12 .input-select-container")
 const page12chevronArrLoc = document.querySelectorAll(".page12 .chevron")
@@ -623,6 +629,11 @@ const validateCheckbox = (value)=> {
     return true
 }
 
+const validate22Characters = (value)=> {
+    if (value.length !== 22) return  [false, "Wymagane 22 cyfry!"]
+    return [true, ""]
+}
+
 // zaznaczanie kafelków - strona 1
 
 page1radioArrLoc.forEach((elem) => {
@@ -671,11 +682,25 @@ page3radioArrLoc.forEach((elem, index) => {
             page3radios = 1
             page3noticeContentArrLoc[0].classList.add("active")
             addToLocalStorageObject("page3radios", page3radios)
+
+            page4asterix_email4_7.style.display = "inline"
+            page4asterix_email4_15.style.display = "inline"
+           
         }
         if (e.target.value === "radio4") {
             page3radios = 2
             page3noticeContentArrLoc[1].classList.add("active")
             addToLocalStorageObject("page3radios", page3radios)
+
+            page4asterix_email4_7.style.display = "none"
+            page4input_email4_7.parentElement.classList.remove("error")
+            page4input_email4_7.classList.remove("error")
+            page4input_email4_7.nextElementSibling.innerText = ""
+
+            page4asterix_email4_15.style.display = "none"
+            page4input_email4_15.parentElement.classList.remove("error")
+            page4input_email4_15.classList.remove("error")
+            page4input_email4_15.nextElementSibling.innerText = ""
         }
     })
 })
@@ -804,13 +829,20 @@ const validatePage4 = ()=> {
         let errorValidationFlag = true
 
         if (!validateEmpty(elem.value)[0]) {
-            elem.parentElement.classList.add("error")
-            elem.classList.add("error")
-            elem.nextElementSibling.innerText = validateEmpty(elem.value)[1]
-            validateSuccess = false
-            errorValidationFlag = false
+            if (elem.name !== "email" || page3radios != 2) {
+                elem.parentElement.classList.add("error")
+                elem.classList.add("error")
+                elem.nextElementSibling.innerText = validateEmpty(elem.value)[1]
+                validateSuccess = false
+                errorValidationFlag = false
+            } else {
+                elem.parentElement.classList.remove("error")
+                elem.classList.remove("error")
+                elem.nextElementSibling.innerText = ""
+            }
         } else {
-            if (elem.name === "email") {
+            if (elem.name === "email" && page3radios == 1) {
+                console.log(elem.name, page3radios )
                 if (!validateEmail(elem.value)[0]) {
                     elem.parentElement.classList.add("error")
                     elem.classList.add("error")
@@ -1189,11 +1221,11 @@ const validatePage7 = ()=> {
     let validatedArray
 
     if (page1radios === 1) {
-        validatedArray = inputsPage7Array1
+        validatedArray = inputsPage7Array1.concat(inputsPage7Array3)
     }
 
     if (page1radios === 2) {
-        validatedArray = inputsPage7Array2
+        validatedArray = inputsPage7Array2.concat(inputsPage7Array3)
     }
 
     validatedArray.forEach((elem)=>{
@@ -1201,11 +1233,85 @@ const validatePage7 = ()=> {
         let errorValidationFlag = true
 
         if (!validateEmpty(elem.value)[0]) {
-            elem.parentElement.classList.add("error")
-            elem.classList.add("error")
-            elem.nextElementSibling.innerText = validateEmpty(elem.value)[1]
-            validateSuccess = false
-            errorValidationFlag = false
+
+            if (elem.name === "wt") {
+                if (inputsPage7Array1[1].value === "") {
+                    inputsPage7Array1[0].parentElement.classList.add("error")
+                    inputsPage7Array1[1].parentElement.classList.add("error")
+                    inputsPage7Array1[0].classList.add("error")
+                    inputsPage7Array1[1].classList.add("error")
+                    inputsPage7Array1[0].nextElementSibling.innerText = "Nr WT lub Nr PPG muszą być wypełnione"
+                    inputsPage7Array1[1].nextElementSibling.innerText = "Nr WT lub Nr PPG muszą być wypełnione"
+                    validateSuccess = false
+                    errorValidationFlag = false
+                } else {
+                    inputsPage7Array1[0].parentElement.classList.remove("error")
+                    inputsPage7Array1[1].parentElement.classList.remove("error")
+                    inputsPage7Array1[0].classList.remove("error")
+                    inputsPage7Array1[1].classList.remove("error")
+                    inputsPage7Array1[0].nextElementSibling.innerText = ""
+                    inputsPage7Array1[1].nextElementSibling.innerText = ""
+                }
+            } else if (elem.name === "ppg") {
+                if (inputsPage7Array1[0].value === "") {
+                    inputsPage7Array1[0].parentElement.classList.add("error")
+                    inputsPage7Array1[1].parentElement.classList.add("error")
+                    inputsPage7Array1[0].classList.add("error")
+                    inputsPage7Array1[1].classList.add("error")
+                    inputsPage7Array1[0].nextElementSibling.innerText = "Nr WT lub Nr PPG muszą być wypełnione"
+                    inputsPage7Array1[1].nextElementSibling.innerText = "Nr WT lub Nr PPG muszą być wypełnione"
+                    validateSuccess = false
+                    errorValidationFlag = false
+                } else {
+                    inputsPage7Array1[0].parentElement.classList.remove("error")
+                    inputsPage7Array1[1].parentElement.classList.remove("error")
+                    inputsPage7Array1[0].classList.remove("error")
+                    inputsPage7Array1[1].classList.remove("error")
+                    inputsPage7Array1[0].nextElementSibling.innerText = ""
+                    inputsPage7Array1[1].nextElementSibling.innerText = ""
+                }
+            } else if (elem.name === "nr_bud") {
+                if (inputsPage7Array3[1].value === "") {
+                    inputsPage7Array3[1].parentElement.classList.add("error")
+                    inputsPage7Array3[0].classList.add("error")
+                    inputsPage7Array3[1].classList.add("error")
+                    inputsPage7Array3[0].nextElementSibling.innerText = "Nr budynku/lokalu lub nr działki muszą być wypełnione"
+                    inputsPage7Array3[1].nextElementSibling.innerText = "Nr budynku/lokalu lub nr działki muszą być wypełnione"
+                    validateSuccess = false
+                    errorValidationFlag = false
+                } else {
+                    inputsPage7Array3[0].parentElement.classList.remove("error")
+                    inputsPage7Array3[1].parentElement.classList.remove("error")
+                    inputsPage7Array3[0].classList.remove("error")
+                    inputsPage7Array3[1].classList.remove("error")
+                    inputsPage7Array3[0].nextElementSibling.innerText = ""
+                    inputsPage7Array3[1].nextElementSibling.innerText = ""
+                }
+            } else if (elem.name === "nr_dzl") {
+                if (inputsPage7Array3[0].value === "") {
+                    inputsPage7Array3[0].parentElement.classList.add("error")
+                    inputsPage7Array3[1].parentElement.classList.add("error")
+                    inputsPage7Array3[0].classList.add("error")
+                    inputsPage7Array3[1].classList.add("error")
+                    inputsPage7Array3[0].nextElementSibling.innerText = "Nr budynku/lokalu lub nr działki muszą być wypełnione"
+                    inputsPage7Array3[1].nextElementSibling.innerText = "Nr budynku/lokalu lub nr działki muszą być wypełnione"
+                    validateSuccess = false
+                    errorValidationFlag = false
+                } else {
+                    inputsPage7Array3[0].parentElement.classList.remove("error")
+                    inputsPage7Array3[1].parentElement.classList.remove("error")
+                    inputsPage7Array3[0].classList.remove("error")
+                    inputsPage7Array3[1].classList.remove("error")
+                    inputsPage7Array3[0].nextElementSibling.innerText = ""
+                    inputsPage7Array3[1].nextElementSibling.innerText = ""
+                }
+            } else {
+                elem.parentElement.classList.add("error")
+                elem.classList.add("error")
+                elem.nextElementSibling.innerText = validateEmpty(elem.value)[1]
+                validateSuccess = false
+                errorValidationFlag = false
+            }
         } else {
             if (elem.name === "postcode") {
                 if (!validatePostCode(elem.value)[0]) {
@@ -1213,11 +1319,35 @@ const validatePage7 = ()=> {
                     elem.classList.add("error")
                     elem.nextElementSibling.innerText = validatePostCode(elem.value)[1]
                     validateSuccess = false
+                    console.log(validateSuccess)
                     errorValidationFlag = false
                 } else {
                     elem.parentElement.classList.remove("error")
                     elem.classList.remove("error")
                     elem.nextElementSibling.innerText = ""
+                }
+            }
+            if (elem.name === "ppg") {
+                if (!validateDigits(elem.value)[0]) {
+                    elem.parentElement.classList.add("error")
+                    elem.classList.add("error")
+                    elem.nextElementSibling.innerText = validateDigits(elem.value)[1]
+                    validateSuccess = false
+                    console.log(validateSuccess)
+                    errorValidationFlag = false
+                } else {
+                    if (!validate22Characters(elem.value)[0]) {
+                        elem.parentElement.classList.add("error")
+                        elem.classList.add("error")
+                        elem.nextElementSibling.innerText = validate22Characters(elem.value)[1]
+                        validateSuccess = false
+                        console.log(validateSuccess)
+                        errorValidationFlag = false
+                    } else {
+                        elem.parentElement.classList.remove("error")
+                        elem.classList.remove("error")
+                        elem.nextElementSibling.innerText = ""
+                    }
                 }
             }
             if (errorValidationFlag) {
@@ -1227,24 +1357,6 @@ const validatePage7 = ()=> {
             }
         }
     })
-
-    if (!validateEmpty(inputsPage7Array3[0].value)[0] && !validateEmpty(inputsPage7Array3[1].value)[0]) {
-        inputsPage7Array3[0].parentElement.classList.add("error")
-        inputsPage7Array3[1].parentElement.classList.add("error")
-        inputsPage7Array3[0].classList.add("error")
-        inputsPage7Array3[1].classList.add("error")
-        inputsPage7Array3[0].nextElementSibling.innerText = "Nr budynku/lokalu lub nr działki muszą być wypełnione"
-        inputsPage7Array3[1].nextElementSibling.innerText = "Nr budynku/lokalu lub nr działki muszą być wypełnione"
-
-        validateSuccess = false
-    } else {
-        inputsPage7Array3[0].parentElement.classList.remove("error")
-        inputsPage7Array3[1].parentElement.classList.remove("error")
-        inputsPage7Array3[0].classList.remove("error")
-        inputsPage7Array3[1].classList.remove("error")
-        inputsPage7Array3[0].nextElementSibling.innerText = ""
-        inputsPage7Array3[1].nextElementSibling.innerText = ""
-    }
 
     if (validateSuccess) {
         return true
@@ -1415,7 +1527,7 @@ const readValuesPage8 = ()=> {
     inputText8_2 = page8input_people8_2.value
 }
 
-// =========================================
+// ===================== strona 9 ====================
 
 const readPowerValues = ()=> {
     if (page9inputTextArrLoc) {
@@ -1611,6 +1723,12 @@ const validatePage9 = () => {
             page9inputText9_9Loc.classList.remove("error")
             page9inputText9_9Loc.parentElement.parentElement.querySelector(".error-box").innerText = ""
         }
+    }
+
+    console.log(page9contractedPowerHigh)
+
+    if (page9contractedPowerHigh) {
+        validateSuccess = false
     }
 
     if (validateSuccess) {
@@ -1825,11 +1943,13 @@ page10inputRadiosFArrLoc.forEach((elem, index) => {
             date10_1 = ""
             addToLocalStorageObject("date10_1", date10_1)
             page10input_contractdate10_1.value = ""
+            page10noticeLoc.style.display = "flex"
         }
         if (e.target.value === "radio14") {
             page10radiosF = 2
             page10contractPeriodFormLoc.style.display = "flex"
             addToLocalStorageObject("page10radiosF", 2)
+            page10noticeLoc.style.display = "none"
         }
     })
 })
@@ -2008,13 +2128,15 @@ page11inputRadiosArrLoc.forEach((elem, index) => {
     
     elem.addEventListener("change", (e)=> {
 
-        if (e.target.value === "radio17") {
+        if (e.target.value === "radio18") {
             page11radios = 1
             addToLocalStorageObject("page11radios", 1)
+            page11formBoxLoc.style.display = "none"
         }
-        if (e.target.value === "radio18") {
+        if (e.target.value === "radio17") {
             page11radios = 2
             addToLocalStorageObject("page11radios", 2)
+            page11formBoxLoc.style.display = "flex"
         }
     })
 })
@@ -3075,11 +3197,17 @@ const readAndPlaceLocalStorageData = ()=> {
             page3radioArrLoc[0].checked = true
             page3noticeContentArrLoc[0].classList.add("active")
             page3noticeContentArrLoc[1].classList.remove("active")
+
+            page4asterix_email4_7.style.display = "inline"
+            page4asterix_email4_15.style.display = "inline"
         }
         if (LSdata.page3radios === 2) {
             page3radioArrLoc[1].checked = true
             page3noticeContentArrLoc[0].classList.remove("active")
             page3noticeContentArrLoc[1].classList.add("active")
+
+            page4asterix_email4_7.style.display = "none"
+            page4asterix_email4_15.style.display = "none"
         }
 
         // page 4
@@ -3502,6 +3630,7 @@ const readAndPlaceLocalStorageData = ()=> {
                 if (LSdata.date10_2 !== undefined) {
                     page10input_deliverydate10_2.value = LSdata.date10_2
                 }
+                page10noticeLoc.style.display = "flex"
             }
             if (page10radiosF === 2) {
                 page10inputRadiosFArrLoc[1].checked = true
@@ -3509,6 +3638,7 @@ const readAndPlaceLocalStorageData = ()=> {
                 if (LSdata.date10_1 !== undefined) {
                     page10input_contractdate10_1.value = LSdata.date10_1
                 }
+                page10noticeLoc.style.display = "none"
             }
         }
         if (LSdata.date10_2 !== undefined) {
@@ -3541,9 +3671,11 @@ const readAndPlaceLocalStorageData = ()=> {
             page11radios = LSdata.page11radios
             if (page11radios === 1) {
                 page11inputRadiosArrLoc[0].checked = true
+                page11formBoxLoc.style.display = "none"
             }
             if (page11radios === 2) {
                 page11inputRadiosArrLoc[1].checked = true
+                page11formBoxLoc.style.display = "flex"
             }
         }
 
